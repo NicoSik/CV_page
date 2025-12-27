@@ -59,12 +59,14 @@ Your CV will be published at `https://yourusername.github.io/CV_page/` within a 
 
 ## 🎨 Color Scheme
 
-The default color scheme uses:
-- Primary: #2c3e50 (Dark blue-gray)
-- Accent: #3498db (Blue)
-- Background: #f4f4f4 (Light gray)
+The color scheme uses:
+- Primary text: #111 (Near black)
+- Accent: #3a67e4 (Blue)
+- Muted text: #444 (Dark gray)
+- Border: #ddd (Light gray)
+- Background: #fff (White)
 
-Feel free to change these in the `style.css` file.
+Feel free to change these in the `style.css` file by modifying the CSS variables in `:root`.
 
 ## 📄 License
 
