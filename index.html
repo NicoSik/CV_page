@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional CV - Curriculum Vitae">
+    <title>My CV</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Your Name</h1>
+            <p class="title">Your Professional Title</p>
+            <div class="contact-info">
+                <p>📧 your.email@example.com</p>
+                <p>📱 +1 (123) 456-7890</p>
+                <p>📍 Your City, Country</p>
+                <p>🔗 <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a> | 
+                   <a href="https://github.com/yourusername" target="_blank">GitHub</a></p>
+            </div>
+        </header>
+
+        <section class="summary">
+            <h2>Professional Summary</h2>
+            <p>
+                Highly motivated professional with expertise in [your field]. 
+                Passionate about [your interests] with a proven track record of [your achievements].
+                Strong background in [your skills] and committed to delivering high-quality results.
+            </p>
+        </section>
+
+        <section class="experience">
+            <h2>Work Experience</h2>
+            
+            <div class="job">
+                <div class="job-header">
+                    <h3>Job Title</h3>
+                    <span class="period">Month Year - Present</span>
+                </div>
+                <p class="company">Company Name, Location</p>
+                <ul>
+                    <li>Achievement or responsibility description</li>
+                    <li>Key accomplishment with quantifiable results</li>
+                    <li>Project leadership or team collaboration example</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <h3>Previous Job Title</h3>
+                    <span class="period">Month Year - Month Year</span>
+                </div>
+                <p class="company">Previous Company Name, Location</p>
+                <ul>
+                    <li>Achievement or responsibility description</li>
+                    <li>Key accomplishment with quantifiable results</li>
+                    <li>Project leadership or team collaboration example</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="education">
+            <h2>Education</h2>
+            
+            <div class="degree">
+                <div class="degree-header">
+                    <h3>Degree Name</h3>
+                    <span class="period">Year</span>
+                </div>
+                <p class="institution">University Name, Location</p>
+                <p class="details">Relevant coursework or achievements</p>
+            </div>
+        </section>
+
+        <section class="skills">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Technical Skills</h4>
+                    <ul>
+                        <li>Skill 1</li>
+                        <li>Skill 2</li>
+                        <li>Skill 3</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>Languages</h4>
+                    <ul>
+                        <li>Language 1 - Proficiency Level</li>
+                        <li>Language 2 - Proficiency Level</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>Other Skills</h4>
+                    <ul>
+                        <li>Skill 1</li>
+                        <li>Skill 2</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="certifications">
+            <h2>Certifications</h2>
+            <ul>
+                <li>Certification Name - Issuing Organization (Year)</li>
+                <li>Another Certification - Issuing Organization (Year)</li>
+            </ul>
+        </section>
+
+        <footer>
+            <p>Last updated: <span id="last-updated"></span></p>
+        </footer>
+    </div>
+
+    <script>
+        // Set last updated date
+        document.getElementById('last-updated').textContent = new Date().toLocaleDateString();
+    </script>
+</body>
+</html>
