@@ -1,0 +1,11 @@
+# Add your profile picture with this name (optional)
+# CV_picture.jpg
+
+# Temporary files
+*.tmp
+*.swp
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
