@@ -4,7 +4,9 @@ A professional, responsive CV/Resume page hosted on GitHub Pages.
 
 ## 🌐 View Live
 
-Visit your CV at: `https://nicosik.github.io/CV_page/`
+Visit your CV at: `https://yourusername.github.io/CV_page/`
+
+(Replace `yourusername` with your actual GitHub username)
 
 ## 📝 Customization
 
@@ -29,7 +31,9 @@ This repository is configured to use GitHub Pages. To enable it:
 3. Under "Source", select the branch (usually `main` or `master`)
 4. Click "Save"
 
-Your CV will be published at `https://nicosik.github.io/CV_page/` within a few minutes.
+Your CV will be published at `https://yourusername.github.io/CV_page/` within a few minutes.
+
+(Replace `yourusername` with your actual GitHub username)
 
 ## 📱 Features
 
