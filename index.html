@@ -1,122 +1,297 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Professional CV - Curriculum Vitae">
-    <title>My CV</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <title>Nicolai Sikora – CV</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div class="container">
-        <header>
-            <h1>Your Name</h1>
-            <p class="title">Your Professional Title</p>
-            <div class="contact-info">
-                <p>📧 your.email@example.com</p>
-                <p>📱 +1 (123) 456-7890</p>
-                <p>📍 Your City, Country</p>
-                <p>🔗 <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a> | 
-                   <a href="https://github.com/yourusername" target="_blank">GitHub</a></p>
-            </div>
-        </header>
+  <!-- Language Toggle Button -->
+  <div class="lang-toggle">
+    <button id="langBtn" onclick="toggleLanguage()">🇳🇴 Norsk</button>
+  </div>
 
-        <section class="summary">
-            <h2>Professional Summary</h2>
-            <p>
-                Highly motivated professional with expertise in [your field]. 
-                Passionate about [your interests] with a proven track record of [your achievements].
-                Strong background in [your skills] and committed to delivering high-quality results.
-            </p>
-        </section>
+  <div class="page">
 
-        <section class="experience">
-            <h2>Work Experience</h2>
-            
-            <div class="job">
-                <div class="job-header">
-                    <h3>Job Title</h3>
-                    <span class="period">Month Year - Present</span>
-                </div>
-                <p class="company">Company Name, Location</p>
-                <ul>
-                    <li>Achievement or responsibility description</li>
-                    <li>Key accomplishment with quantifiable results</li>
-                    <li>Project leadership or team collaboration example</li>
-                </ul>
-            </div>
+    <header class="cv-header">
+      <div class="title-block">
+        <h1>Nicolai Sikora</h1>
+        <h2 class="lang-en">Informatics student • Programming & Systems Architecture</h2>
+        <h2 class="lang-no" style="display:none;">Informatikkstudent • Programmering og systemarkitektur</h2>
 
-            <div class="job">
-                <div class="job-header">
-                    <h3>Previous Job Title</h3>
-                    <span class="period">Month Year - Month Year</span>
-                </div>
-                <p class="company">Previous Company Name, Location</p>
-                <ul>
-                    <li>Achievement or responsibility description</li>
-                    <li>Key accomplishment with quantifiable results</li>
-                    <li>Project leadership or team collaboration example</li>
-                </ul>
-            </div>
-        </section>
+        <ul class="contact-row">
+          <li><a href="mailto:nicolai.sikora1@gmail.com">nicolai.sikora1@gmail.com</a></li>
+          <li>+47 401 67 250</li>
+          <li><a href="https://github.com/NicoSik">github.com/NicoSik</a></li>
+          <li><a href="https://www.linkedin.com/in/nicolai-sikora-620843251/">linkedin.com/in/nicolai-sikora</a></li>
+        </ul>
+      </div>
 
-        <section class="education">
-            <h2>Education</h2>
-            
-            <div class="degree">
-                <div class="degree-header">
-                    <h3>Degree Name</h3>
-                    <span class="period">Year</span>
-                </div>
-                <p class="institution">University Name, Location</p>
-                <p class="details">Relevant coursework or achievements</p>
-            </div>
-        </section>
+      <img src="CV_picture.jpg" alt="Portrait of Nicolai Sikora" class="profile-pic">
+    </header>
 
-        <section class="skills">
-            <h2>Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h4>Technical Skills</h4>
-                    <ul>
-                        <li>Skill 1</li>
-                        <li>Skill 2</li>
-                        <li>Skill 3</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h4>Languages</h4>
-                    <ul>
-                        <li>Language 1 - Proficiency Level</li>
-                        <li>Language 2 - Proficiency Level</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h4>Other Skills</h4>
-                    <ul>
-                        <li>Skill 1</li>
-                        <li>Skill 2</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+    <p class="profile lang-en">
+      MSc student (University of Oslo) focused on systems programming and software architecture.
+      Experience as grader/TA. Comfortable in C/Java/Python, Linux, Git, and Docker.
+    </p>
+    <p class="profile lang-no" style="display:none;">
+      Masterstudent ved Universitetet i Oslo med fokus på systemprogrammering og
+      programvarearkitektur. Erfaring som gruppelærer og retter.
+      Komfortabel med C, Java og Python, samt Linux, Git og Docker.
+    </p>
 
-        <section class="certifications">
-            <h2>Certifications</h2>
-            <ul>
-                <li>Certification Name - Issuing Organization (Year)</li>
-                <li>Another Certification - Issuing Organization (Year)</li>
-            </ul>
-        </section>
+    <hr class="header-divider">
 
-        <footer>
-            <p>Last updated: <span id="last-updated"></span></p>
-        </footer>
-    </div>
+    <main>
+      <section>
+        <h3 class="lang-en">Work Experience</h3>
+        <h3 class="lang-no" style="display:none;">Arbeidserfaring</h3>
 
-    <script>
-        // Set last updated date
-        document.getElementById('last-updated').textContent = new Date().toLocaleDateString();
-    </script>
+        <div class="item">
+          <div class="role">
+            <h4 class="lang-en">Teaching Assistant (IN3000/IN4000) Operating Systems</h4>
+            <h4 class="lang-no" style="display:none;">Gruppelærer (IN3000/IN4000) Operativsystemer</h4>
+            <span class="meta lang-en">University of Oslo • 01/2026 – 06/2026</span>
+            <span class="meta lang-no" style="display:none;">Universitetet i Oslo • 01/2026 – 06/2026</span>
+          </div>
+          <ul class="bullets lang-en">
+            <li>Starting Jan 2026; supporting students with OS concepts and course assignments.</li>
+          </ul>
+          <ul class="bullets lang-no" style="display:none;">
+            <li>Oppstart januar 2026; veiledning og retting av studenter i operativsystem-konsepter og innleveringer.</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <div class="role">
+            <h4 class="lang-en">Grader (IN2031) Project in Programming</h4>
+            <h4 class="lang-no" style="display:none;">Retter (IN2031) Prosjekt i programmering</h4>
+            <span class="meta lang-en">University of Oslo • 09/2025 – 11/2025</span>
+            <span class="meta lang-no" style="display:none;">Universitetet i Oslo • 09/2025 – 11/2025</span>
+          </div>
+          <ul class="bullets lang-en">
+            <li>Graded mandatory assignments and provided structured feedback to students.</li>
+          </ul>
+          <ul class="bullets lang-no" style="display:none;">
+            <li>Rettet obligatoriske oppgaver og ga strukturert tilbakemelding til studenter.</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <div class="role">
+            <h4 class="lang-en">Keyholder & Health and Safety Representative</h4>
+            <h4 class="lang-no" style="display:none;">Nøkkelbærer & Verneombud</h4>
+            <span class="meta lang-en">Kiwi Minipris • 04/2024 – Present</span>
+            <span class="meta lang-no" style="display:none;">Kiwi Minipris • 04/2024 – Nåværende</span>
+          </div>
+          <ul class="bullets lang-en">
+            <li>Handled opening/closing routines, cash procedures, and daily operational security.</li>
+            <li>Elected HSE representative, tracked risks, ensured compliance, and coordinated with management.</li>
+            <li>Delivered customer support and resolved issues, collaborated closely with the team in daily operations.</li>
+          </ul>
+          <ul class="bullets lang-no" style="display:none;">
+            <li>Ansvar for åpne-/stengerutiner, kontanthåndtering og daglig sikkerhet.</li>
+            <li>Valgt verneombud, fulgte opp HMS, risikovurderinger og dialog med ledelse.</li>
+            <li>Kundeservice og problemløsning i samarbeid med teamet.</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <div class="role">
+            <h4 class="lang-en">Grader (IN2030) Project in Programming</h4>
+            <h4 class="lang-no" style="display:none;">Retter (IN2030) Prosjekt i programmering</h4>
+            <span class="meta lang-en">University of Oslo • 08/2023 – 12/2023</span>
+            <span class="meta lang-no" style="display:none;">Universitetet i Oslo • 08/2023 – 12/2023</span>
+          </div>
+          <ul class="bullets lang-en">
+            <li>Graded mandatory assignments and provided structured feedback to students.</li>
+          </ul>
+          <ul class="bullets lang-no" style="display:none;">
+            <li>Rettet obligatoriske oppgaver og ga strukturert tilbakemelding til studenter.</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <div class="role">
+            <h4 class="lang-en">S6 Assistant</h4>
+            <h4 class="lang-no" style="display:none;">S6-assistent</h4>
+            <span class="meta lang-en">Norwegian Armed Forces, HMKG • 01/2021 – 01/2022</span>
+            <span class="meta lang-no" style="display:none;">Forsvaret, HMKG • 01/2021 – 01/2022</span>
+          </div>
+          <ul class="bullets lang-en">
+            <li>Held training on handling sensitive/classified information in line with security procedures.</li>
+            <li>Performed checks and maintenance of communication equipment to ensure readiness and reliability.</li>
+            <li>Supported camp communications/ICT, including procurement and troubleshooting.</li>
+          </ul>
+          <ul class="bullets lang-no" style="display:none;">
+            <li>Holdt kurs i håndtering av gradert og sensitiv informasjon.</li>
+            <li>Vedlikehold og kontroll av samband- og kommunikasjonsutstyr.</li>
+            <li>Støttet leirens IKT- og sambandsdrift.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="lang-en">Education</h3>
+        <h3 class="lang-no" style="display:none;">Utdanning</h3>
+
+        <div class="item">
+          <div class="role">
+            <h4 class="lang-en">Master's in Software Development and Systems Architecture</h4>
+            <h4 class="lang-no" style="display:none;">Master i programvareutvikling og systemarkitektur</h4>
+            <span class="meta lang-en">University of Oslo • 08/2025 – 06/2027</span>
+            <span class="meta lang-no" style="display:none;">Universitetet i Oslo • 08/2025 – 06/2027</span>
+          </div>
+          <ul class="bullets lang-en">
+            <li>Thesis: <em>Malware detection in deep neural networks</em></li>
+          </ul>
+          <ul class="bullets lang-no" style="display:none;">
+            <li>Masteroppgave: <em>Deteksjon av skadevare i dype nevrale nettverk</em></li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <div class="role">
+            <h4 class="lang-en">Supplementary Courses in Informatics</h4>
+            <h4 class="lang-no" style="display:none;">Supplerende emner i informatikk</h4>
+            <span class="meta lang-en">University of Oslo • 08/2024 – 06/2025</span>
+            <span class="meta lang-no" style="display:none;">Universitetet i Oslo • 08/2024 – 06/2025</span>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="role">
+            <h4 class="lang-en">Bachelor of Science, specialization in Computer Science</h4>
+            <h4 class="lang-no" style="display:none;">Bachelor i realfag, studieretning informatikk</h4>
+            <span class="meta lang-en">University of Oslo • 08/2020 – 06/2024</span>
+            <span class="meta lang-no" style="display:none;">Universitetet i Oslo • 08/2020 – 06/2024</span>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="lang-en">Skills</h3>
+        <h3 class="lang-no" style="display:none;">Ferdigheter</h3>
+
+        <h4 class="lang-en">Programming Languages</h4>
+        <h4 class="lang-no" style="display:none;">Programmeringsspråk</h4>
+        <ul class="taglist">
+          <li>C</li><li>Java</li><li>Python</li><li>x86 Assembly</li><li>Scheme (Lisp)</li>
+        </ul>
+
+        <h4 class="lang-en">Web Technologies</h4>
+        <h4 class="lang-no" style="display:none;">Web-teknologier</h4>
+        <ul class="taglist">
+          <li>HTML</li><li>CSS</li><li>JavaScript</li><li>React</li>
+        </ul>
+
+        <h4 class="lang-en">Databases</h4>
+        <h4 class="lang-no" style="display:none;">Databaser</h4>
+        <ul class="taglist">
+          <li>SQL</li><li>SPARQL</li>
+        </ul>
+
+        <h4 class="lang-en">Tools & Systems</h4>
+        <h4 class="lang-no" style="display:none;">Verktøy og systemer</h4>
+        <ul class="taglist">
+          <li>Git</li><li>Docker</li><li>Linux</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3 class="lang-en">Projects</h3>
+        <h3 class="lang-no" style="display:none;">Prosjekter</h3>
+
+        <div class="item">
+          <div class="role">
+            <h4 class="lang-en">Operating System (IN3000)</h4>
+            <h4 class="lang-no" style="display:none;">Operativsystem (IN3000)</h4>
+            <span class="meta lang-en">University of Oslo • 01/2025 – 06/2025</span>
+            <span class="meta lang-no" style="display:none;">Universitetet i Oslo • 01/2025 – 06/2025</span>
+          </div>
+          <ul class="bullets lang-en">
+            <li>Built a minimal operating system in x86 assembly and C.</li>
+            <li>Implemented paging/memory management, process scheduling, and basic file handling.</li>
+            <li>Strengthened understanding of kernel-level architecture, debugging, and low-level performance tradeoffs.</li>
+          </ul>
+          <ul class="bullets lang-no" style="display:none;">
+            <li>Utviklet et minimalt operativsystem i x86-assembly og C.</li>
+            <li>Implementerte paging, minnehåndtering, prosessplanlegging og enkel filhåndtering.</li>
+            <li>Erfaring med lavnivå utvikling og feilsøking på lavt nivå.</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <div class="role">
+            <h4><a href="https://github.com/NicoSik/StockApp" class="lang-en">Mini Stock Broker</a></h4>
+            <h4><a href="https://github.com/NicoSik/StockApp" class="lang-no" style="display:none;">Mini aksjemegler</a></h4>
+            <span class="meta lang-en">Personal project</span>
+            <span class="meta lang-no" style="display:none;">Personlig prosjekt</span>
+          </div>
+          <ul class="bullets lang-en">
+            <li>Personal project to practice backend development and API integration using market data.</li>
+            <li>Fetches stock data via the Alpaca API (NASDAQ/NYSE) and refreshes data daily before market open.</li>
+            <li>Backend: Java, SQL • Frontend: HTML, JavaScript</li>
+          </ul>
+          <ul class="bullets lang-no" style="display:none;">
+            <li>Backend-prosjekt for å øve på API-integrasjon og databehandling.</li>
+            <li>Henter aksjedata via Alpaca-API og oppdaterer daglig før børsåpning.</li>
+            <li>Backend: Java, SQL • Frontend: HTML, JavaScript</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="lang-en">Languages</h3>
+        <h3 class="lang-no" style="display:none;">Språk</h3>
+        <ul class="taglist">
+          <li class="lang-en">Norwegian — Native</li>
+          <li class="lang-en">English — Fluent</li>
+          <li class="lang-en">Polish — Fluent</li>
+          <li class="lang-no" style="display:none;">Norsk — Morsmål</li>
+          <li class="lang-no" style="display:none;">Engelsk — Flytende</li>
+          <li class="lang-no" style="display:none;">Polsk — Flytende</li>
+        </ul>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    let currentLang = 'en';
+
+    function toggleLanguage() {
+      const enElements = document.querySelectorAll('.lang-en');
+      const noElements = document.querySelectorAll('.lang-no');
+      const langBtn = document.getElementById('langBtn');
+
+      if (currentLang === 'en') {
+        // Switch to Norwegian
+        enElements.forEach(el => el.style.display = 'none');
+        noElements.forEach(el => el.style.display = '');
+        langBtn.textContent = '🇬🇧 English';
+        document.documentElement.lang = 'no';
+        currentLang = 'no';
+        localStorage.setItem('cvLang', 'no');
+      } else {
+        // Switch to English
+        enElements.forEach(el => el.style.display = '');
+        noElements.forEach(el => el.style.display = 'none');
+        langBtn.textContent = '🇳🇴 Norsk';
+        document.documentElement.lang = 'en';
+        currentLang = 'en';
+        localStorage.setItem('cvLang', 'en');
+      }
+    }
+
+    // Load saved language preference
+    window.addEventListener('DOMContentLoaded', () => {
+      const savedLang = localStorage.getItem('cvLang');
+      if (savedLang === 'no') {
+        toggleLanguage();
+      }
+    });
+  </script>
 </body>
 </html>
