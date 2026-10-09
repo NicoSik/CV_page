@@ -48,13 +48,34 @@
   </script>
   
   <link rel="stylesheet" href="style.css">
+  <script>
+    // Set the theme before first paint to avoid a light/dark flash
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('cvTheme'); } catch (e) {}
+      if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.dataset.theme = t;
+    })();
+  </script>
 </head>
 
 <body>
-  <!-- Language Toggle Button -->
-  <div class="lang-toggle">
-    <button id="langBtn" onclick="toggleLanguage()">🇳🇴 Norsk</button>
-  </div>
+  <!-- Sticky top bar: section navigation, theme and language toggles -->
+  <nav class="topbar" aria-label="Sections">
+    <div class="topbar-inner">
+      <ul class="nav-links">
+        <li><a href="#experience"><span class="lang-en">Experience</span><span class="lang-no" style="display:none;">Erfaring</span></a></li>
+        <li><a href="#projects"><span class="lang-en">Projects</span><span class="lang-no" style="display:none;">Prosjekter</span></a></li>
+        <li><a href="#education"><span class="lang-en">Education</span><span class="lang-no" style="display:none;">Utdanning</span></a></li>
+        <li><a href="#skills"><span class="lang-en">Skills</span><span class="lang-no" style="display:none;">Ferdigheter</span></a></li>
+        <li><a href="#languages"><span class="lang-en">Languages</span><span class="lang-no" style="display:none;">Språk</span></a></li>
+      </ul>
+      <div class="topbar-actions">
+        <button id="themeBtn" class="icon-btn" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
+        <button id="langBtn" class="lang-btn" onclick="toggleLanguage()">🇳🇴 Norsk</button>
+      </div>
+    </div>
+  </nav>
 
   <div class="page">
 
@@ -65,7 +86,10 @@
         <h2 class="lang-no" style="display:none;">Informatikkstudent • Programmering og systemarkitektur</h2>
 
         <ul class="contact-row">
-          <li><a href="mailto:nicolai.sikora1@gmail.com">nicolai.sikora1@gmail.com</a></li>
+          <li>
+            <a href="mailto:nicolai.sikora1@gmail.com">nicolai.sikora1@gmail.com</a>
+            <button class="copy-btn" data-copy="nicolai.sikora1@gmail.com" aria-label="Copy email address" title="Copy email address">⧉</button>
+          </li>
           <li>+47 401 67 250</li>
           <li><a href="https://github.com/NicoSik">github.com/NicoSik</a></li>
           <li><a href="https://www.linkedin.com/in/nicolai-sikora-620843251/">linkedin.com/in/nicolai-sikora</a></li>
@@ -88,7 +112,7 @@
     <hr class="header-divider">
 
     <main>
-      <section>
+      <section id="experience">
         <h3 class="lang-en">Work Experience</h3>
         <h3 class="lang-no" style="display:none;">Arbeidserfaring</h3>
 
@@ -179,8 +203,10 @@
       <section id="projects">
         <h3 class="lang-en">Projects</h3>
         <h3 class="lang-no" style="display:none;">Prosjekter</h3>
-        <p class="hint lang-en">Click an image to enlarge it.</p>
-        <p class="hint lang-no" style="display:none;">Klikk på et bilde for å forstørre det.</p>
+        <p class="hint lang-en">Filter by technology, or click an image to enlarge it.</p>
+        <p class="hint lang-no" style="display:none;">Filtrer på teknologi, eller klikk på et bilde for å forstørre det.</p>
+
+        <div class="filter-bar" role="group" aria-label="Filter projects"></div>
 
         <div class="project-grid">
 
@@ -213,7 +239,7 @@
                 og avstemmer hver import mot filens egen totalsum.
               </p>
               <ul class="tags">
-                <li>Java 17</li><li>Javalin</li><li>PostgreSQL</li><li>JavaScript</li><li>REST APIs</li>
+                <li data-tag="Java">Java 17</li><li>Javalin</li><li>PostgreSQL</li><li>JavaScript</li><li>REST APIs</li>
               </ul>
             </div>
           </article>
@@ -290,7 +316,7 @@
                 toppbelastning som sprer forbruket utover d&oslash;gnet.
               </p>
               <ul class="tags">
-                <li>Python</li><li>SciPy (MILP)</li><li>NumPy</li><li>Matplotlib</li>
+                <li>Python</li><li data-tag="SciPy">SciPy (MILP)</li><li>NumPy</li><li>Matplotlib</li>
               </ul>
             </div>
           </article>
@@ -298,7 +324,7 @@
         </div>
       </section>
 
-      <section>
+      <section id="education">
         <h3 class="lang-en">Education</h3>
         <h3 class="lang-no" style="display:none;">Utdanning</h3>
 
@@ -336,8 +362,10 @@
         </div>
       </section>
 
-      <section>
+      <section id="skills">
         <h3 class="lang-en">Skills</h3>
+        <p class="hint lang-en">Highlighted skills link to the projects that use them.</p>
+        <p class="hint lang-no" style="display:none;">Uthevede ferdigheter viser prosjektene som bruker dem.</p>
         <h3 class="lang-no" style="display:none;">Ferdigheter</h3>
 
         <h4 class="lang-en">Programming Languages</h4>
@@ -371,7 +399,7 @@
         </ul>
       </section>
 
-      <section>
+      <section id="languages">
         <h3 class="lang-en">Languages</h3>
         <h3 class="lang-no" style="display:none;">Språk</h3>
         <ul class="taglist">
@@ -411,7 +439,7 @@
         langBtn.textContent = '🇬🇧 English';
         document.documentElement.lang = 'no';
         currentLang = 'no';
-        localStorage.setItem('cvLang', 'no');
+        try { localStorage.setItem('cvLang', 'no'); } catch (e) {}
       } else {
         // Switch to English
         enElements.forEach(el => el.style.display = '');
@@ -419,7 +447,7 @@
         langBtn.textContent = '🇳🇴 Norsk';
         document.documentElement.lang = 'en';
         currentLang = 'en';
-        localStorage.setItem('cvLang', 'en');
+        try { localStorage.setItem('cvLang', 'en'); } catch (e) {}
       }
     }
 
@@ -491,9 +519,146 @@
       if (e.key === 'ArrowRight') showLightboxImage(lbIndex + 1);
     });
 
+    // ---- Theme (light/dark), remembered per browser ----
+    const themeBtn = document.getElementById('themeBtn');
+    function applyTheme(theme) {
+      document.documentElement.dataset.theme = theme;
+      themeBtn.textContent = theme === 'dark' ? '☀️' : '🌙';
+    }
+    applyTheme(document.documentElement.dataset.theme || 'light');
+    themeBtn.addEventListener('click', () => {
+      const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+      applyTheme(next);
+      try { localStorage.setItem('cvTheme', next); } catch (e) {}
+    });
+
+    // ---- Copy email ----
+    document.querySelectorAll('.copy-btn').forEach(btn => {
+      btn.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(btn.dataset.copy);
+          btn.textContent = '✓';
+          btn.classList.add('copied');
+        } catch (e) {
+          btn.textContent = '✗';
+        }
+        setTimeout(() => { btn.textContent = '⧉'; btn.classList.remove('copied'); }, 1500);
+      });
+    });
+
+    // ---- Project filtering by technology ----
+    const projects = Array.from(document.querySelectorAll('.project'));
+    const filterBar = document.querySelector('.filter-bar');
+    const tagKey = li => li.dataset.tag || li.textContent.trim();
+    const projectTags = new Map();
+    projects.forEach(p => {
+      const keys = Array.from(p.querySelectorAll('.tags li')).map(tagKey);
+      p.dataset.tags = keys.join('|');
+      keys.forEach(k => projectTags.set(k, (projectTags.get(k) || 0) + 1));
+    });
+
+    // Only offer filters for technologies listed under Skills (or shared by several projects)
+    const skillNames = new Set(Array.from(document.querySelectorAll('#skills .taglist li'))
+      .map(li => li.textContent.trim()));
+    const filterKeys = [...projectTags.keys()].filter(k => skillNames.has(k) || projectTags.get(k) > 1);
+
+    let activeFilter = null;
+    function makeChip(label, key) {
+      const chip = document.createElement('button');
+      chip.className = 'chip';
+      chip.dataset.filter = key || '';
+      chip.innerHTML = label;
+      chip.addEventListener('click', () => setFilter(key === activeFilter ? null : key));
+      filterBar.appendChild(chip);
+    }
+    makeChip('<span class="lang-en">All</span><span class="lang-no" style="display:none;">Alle</span>', null);
+    // Most-used technologies first, then alphabetical
+    filterKeys
+      .sort((a, b) => projectTags.get(b) - projectTags.get(a) || a.localeCompare(b))
+      .forEach(key => {
+        const n = projectTags.get(key);
+        makeChip(n > 1 ? `${key} <small>${n}</small>` : key, key);
+      });
+    if (currentLang === 'no') {
+      filterBar.querySelectorAll('.lang-en').forEach(el => el.style.display = 'none');
+      filterBar.querySelectorAll('.lang-no').forEach(el => el.style.display = '');
+    }
+
+    function setFilter(key) {
+      activeFilter = key;
+      filterBar.querySelectorAll('.chip').forEach(c =>
+        c.classList.toggle('active', (c.dataset.filter || null) === key));
+      projects.forEach(p => {
+        const match = !key || p.dataset.tags.split('|').includes(key);
+        p.classList.toggle('filtered-out', !match);
+        p.querySelectorAll('.tags li').forEach(li =>
+          li.classList.toggle('active', key !== null && tagKey(li) === key));
+      });
+    }
+    setFilter(null);
+
+    // Tags inside a card act as filters too
+    projects.forEach(p => p.querySelectorAll('.tags li').forEach(li => {
+      if (!filterKeys.includes(tagKey(li))) return;
+      li.classList.add('filterable');
+      li.tabIndex = 0;
+      li.setAttribute('role', 'button');
+      const go = () => setFilter(tagKey(li) === activeFilter ? null : tagKey(li));
+      li.addEventListener('click', go);
+      li.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); }
+      });
+    }));
+
+    // Skills that appear in a project jump to the filtered project list
+    document.querySelectorAll('#skills .taglist li').forEach(li => {
+      const key = li.textContent.trim();
+      if (!filterKeys.includes(key)) return;
+      li.classList.add('linked');
+      li.tabIndex = 0;
+      li.setAttribute('role', 'link');
+      li.title = 'Show projects using ' + key;
+      const go = () => {
+        setFilter(key);
+        document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
+      };
+      li.addEventListener('click', go);
+      li.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); }
+      });
+    });
+
+    // ---- Highlight the current section in the top bar ----
+    const navLinks = Array.from(document.querySelectorAll('.nav-links a'));
+    const sectionObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        navLinks.forEach(a =>
+          a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id));
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    document.querySelectorAll('main section[id]').forEach(sec => sectionObserver.observe(sec));
+
+    // ---- Fade content in as it scrolls into view ----
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const revealObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { rootMargin: '0px 0px -40px 0px' });
+      document.querySelectorAll('.item, .project').forEach(el => {
+        el.classList.add('reveal');
+        revealObserver.observe(el);
+      });
+    }
+
     // Load saved language preference
     window.addEventListener('DOMContentLoaded', () => {
-      const savedLang = localStorage.getItem('cvLang');
+      let savedLang = null;
+      try { savedLang = localStorage.getItem('cvLang'); } catch (e) {}
       if (savedLang === 'no') {
         toggleLanguage();
       }

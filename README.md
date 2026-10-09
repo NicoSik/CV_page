@@ -50,6 +50,11 @@ The CV is published at https://nicosik.github.io/CV_page/ within a few minutes.
 ## 📱 Features
 
 - **Bilingual**: Toggle between English and Norwegian with one click
+- **Sticky navigation**: Section links in the top bar, highlighting the section you are reading
+- **Dark mode**: Theme toggle that follows the system setting by default and remembers your choice
+- **Project filters**: Filter projects by technology; skills used in a project link straight to it
+- **Image gallery**: Per-project carousel and a click-to-enlarge lightbox (arrow keys / Esc)
+- **Copy email**: One-click copy button next to the email address
 - **Language Persistence**: Remembers your language preference
 - **Responsive Design**: Works perfectly on desktop, tablet, and mobile devices
 - **Print-Friendly**: Optimized CSS for printing (profile picture hidden in print)

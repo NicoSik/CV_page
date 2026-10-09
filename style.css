@@ -4,9 +4,37 @@
   --text: #111;
   --muted: #444;
   --border: #ddd;
+  --bg: #fff;
+  --card: #fff;
+  --media-bg: #f1f3f8;
+  --chip-bg: #eef2fd;
+  --chip-text: #2d52b8;
+  --accent-hover: #2d52b8;
+  --topbar-bg: rgba(255, 255, 255, 0.85);
+  color-scheme: light;
   --pad: 1rem;
   --gap: 1.25rem;
   --max: 900px;
+}
+
+[data-theme="dark"] {
+  --accent: #7b9cff;
+  --text: #e8eaf0;
+  --muted: #a7adbb;
+  --border: #2e3442;
+  --bg: #12151c;
+  --card: #1a1e27;
+  --media-bg: #232835;
+  --chip-bg: #24304d;
+  --chip-text: #b8c8ff;
+  --accent-hover: #5b7fe8;
+  --topbar-bg: rgba(18, 21, 28, 0.85);
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4rem;
 }
 
 /* Reset and Base Styles */
@@ -22,18 +50,89 @@ html, body {
 body {
   font: 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
   color: var(--text);
-  background: #fff;
+  background: var(--bg);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
-/* Language Toggle Button */
-.lang-toggle {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 1000;
+/* Top bar */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--topbar-bg);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
 }
 
-.lang-toggle button {
+.topbar-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0.5rem var(--pad);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 0.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.nav-links::-webkit-scrollbar {
+  display: none;
+}
+
+.nav-links a {
+  display: block;
+  padding: 0.35rem 0.7rem;
+  border-radius: 2rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+  white-space: nowrap;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.nav-links a:hover {
+  text-decoration: none;
+  color: var(--text);
+  background: var(--chip-bg);
+}
+
+.nav-links a.active {
+  color: var(--chip-text);
+  background: var(--chip-bg);
+  font-weight: 600;
+}
+
+.topbar-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex: 0 0 auto;
+}
+
+.icon-btn {
+  width: 2.3rem;
+  height: 2.3rem;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--card);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.icon-btn:hover {
+  transform: rotate(-15deg);
+}
+
+.lang-btn {
   padding: 0.6rem 1.2rem;
   background: var(--accent);
   color: #fff;
@@ -46,13 +145,13 @@ body {
   font-family: inherit;
 }
 
-.lang-toggle button:hover {
-  background: #2d52b8;
+.lang-btn:hover {
+  background: var(--accent-hover);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   transform: translateY(-1px);
 }
 
-.lang-toggle button:active {
+.lang-btn:active {
   transform: translateY(0);
 }
 
@@ -103,12 +202,34 @@ body {
   text-decoration: underline;
 }
 
+.copy-btn {
+  margin-left: 0.2rem;
+  padding: 0 0.3rem;
+  border: 1px solid var(--border);
+  border-radius: 0.35rem;
+  background: transparent;
+  color: var(--muted);
+  font-size: 0.8rem;
+  line-height: 1.4;
+  cursor: pointer;
+}
+
+.copy-btn:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.copy-btn.copied {
+  color: #2e9e5b;
+  border-color: #2e9e5b;
+}
+
 .profile-pic {
   width: 150px;
   height: 150px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid #fff;
+  border: 3px solid var(--bg);
   box-shadow: 0 0 0 2px var(--accent);
   flex: 0 0 auto;
 }
@@ -207,8 +328,12 @@ h3 {
   border: 1px solid var(--border);
   border-radius: 0.75rem;
   overflow: hidden;
-  background: #fff;
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  background: var(--card);
+  transition: box-shadow 0.2s ease, transform 0.2s ease, opacity 0.3s ease;
+}
+
+.project.filtered-out {
+  display: none;
 }
 
 .project:hover {
@@ -219,7 +344,7 @@ h3 {
 .project-media {
   position: relative;
   aspect-ratio: 16 / 10;
-  background: #f1f3f8;
+  background: var(--media-bg);
   border-bottom: 1px solid var(--border);
   overflow: hidden;
 }
@@ -320,10 +445,94 @@ h3 {
 
 .tags li {
   padding: 0.15rem 0.55rem;
+  border: 1px solid transparent;
   border-radius: 1rem;
-  background: #eef2fd;
-  color: #2d52b8;
+  background: var(--chip-bg);
+  color: var(--chip-text);
   font-size: 0.8rem;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.tags li.filterable {
+  cursor: pointer;
+  border-color: var(--chip-text);
+  border-color: color-mix(in srgb, var(--chip-text) 35%, transparent);
+}
+
+.tags li.filterable:hover,
+.tags li.active {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+/* Project filter chips */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0 0 1rem 0;
+}
+
+.chip {
+  padding: 0.3rem 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 2rem;
+  background: var(--card);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.chip small {
+  margin-left: 0.15rem;
+  color: var(--muted);
+}
+
+.chip:hover {
+  border-color: var(--accent);
+}
+
+.chip.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--bg);
+}
+
+.chip.active small {
+  color: inherit;
+}
+
+/* Skills that link to projects */
+.taglist li.linked {
+  cursor: pointer;
+  border-color: var(--accent);
+  color: var(--accent);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.taglist li.linked::after {
+  content: " →";
+  opacity: 0.6;
+}
+
+.taglist li.linked:hover,
+.taglist li.linked:focus-visible {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
 }
 
 /* Lightbox */
@@ -418,25 +627,19 @@ a:hover {
     height: 120px;
   }
 
-  /* Keep the toggle in the page flow so it never covers the header */
-  .lang-toggle {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-  }
-
-  .page {
-    padding-top: 3.5rem;
-  }
 
   .lb-close {
     top: 0.5rem;
     right: 0.5rem;
   }
 
-  .lang-toggle button {
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
+  .lang-btn {
+    padding: 0.45rem 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  .topbar-inner {
+    padding: 0.4rem 0.6rem;
   }
 }
 
@@ -464,7 +667,9 @@ a:hover {
     display: none !important;
   }
 
-  .lang-toggle,
+  .topbar,
+  .copy-btn,
+  .filter-bar,
   .lightbox,
   .hint,
   .project-media {
@@ -473,6 +678,40 @@ a:hover {
 
   .project-grid {
     display: block;
+  }
+
+  :root,
+  [data-theme="dark"] {
+    --accent: #3a67e4;
+    --text: #111;
+    --muted: #444;
+    --border: #ddd;
+    --bg: #fff;
+    --card: #fff;
+  }
+
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .project.filtered-out {
+    display: block !important;
+  }
+
+  .taglist li.linked {
+    border-color: var(--border);
+    color: inherit;
+  }
+
+  .taglist li.linked::after {
+    content: none;
+  }
+
+  .tags li {
+    background: none;
+    border: 1px solid var(--border);
+    color: inherit;
   }
 
   .project {
