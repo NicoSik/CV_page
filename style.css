@@ -188,6 +188,215 @@ h3 {
   border-radius: 0.5rem;
 }
 
+/* Projects */
+.hint {
+  margin: -0.4rem 0 0.9rem 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 380px), 1fr));
+  gap: var(--gap);
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background: #fff;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.project:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.project-media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  background: #f1f3f8;
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.project-media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top left;
+  cursor: zoom-in;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.project-media img.active,
+.project-media img:only-of-type {
+  opacity: 1;
+  visibility: visible;
+}
+
+.project-media:hover img.active {
+  transform: scale(1.02);
+}
+
+.project-media img:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: -3px;
+}
+
+.media-count {
+  position: absolute;
+  right: 0.6rem;
+  bottom: 0.6rem;
+  padding: 0.1rem 0.55rem;
+  border-radius: 1rem;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 0.8rem;
+  pointer-events: none;
+}
+
+.media-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2.2rem;
+  height: 2.2rem;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--text);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+}
+
+.media-nav:hover,
+.media-nav:focus-visible {
+  opacity: 1;
+}
+
+.media-prev { left: 0.5rem; }
+.media-next { right: 0.5rem; }
+
+.project-body {
+  padding: 0.9rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  flex: 1;
+}
+
+.project-body h4 {
+  margin: 0;
+  color: var(--accent);
+  font-size: 1.1rem;
+}
+
+.project-body p {
+  margin: 0.2rem 0 0 0;
+  font-size: 0.95rem;
+}
+
+.tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: auto 0 0 0;
+  padding: 0.6rem 0 0 0;
+}
+
+.tags li {
+  padding: 0.15rem 0.55rem;
+  border-radius: 1rem;
+  background: #eef2fd;
+  color: #2d52b8;
+  font-size: 0.8rem;
+}
+
+/* Lightbox */
+.lightbox {
+  width: min(96vw, 1200px);
+  max-width: none;
+  max-height: 94vh;
+  padding: 0;
+  border: 0;
+  border-radius: 0.75rem;
+  background: #111;
+  color: #eee;
+  overflow: visible;
+}
+
+.lightbox::backdrop {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.lightbox figure {
+  margin: 0;
+}
+
+.lightbox img {
+  display: block;
+  width: 100%;
+  max-height: calc(94vh - 3.5rem);
+  object-fit: contain;
+  border-radius: 0.75rem 0.75rem 0 0;
+  background: #111;
+}
+
+.lightbox figcaption {
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.lb-close,
+.lb-nav {
+  position: absolute;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  color: #111;
+  cursor: pointer;
+  line-height: 1;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.lb-close {
+  top: -0.9rem;
+  right: -0.9rem;
+  width: 2.2rem;
+  height: 2.2rem;
+  font-size: 1.5rem;
+}
+
+.lb-nav {
+  top: 45%;
+  width: 2.8rem;
+  height: 2.8rem;
+  font-size: 2rem;
+}
+
+.lb-prev { left: 0.75rem; }
+.lb-next { right: 0.75rem; }
+
+.lightbox.single .lb-nav {
+  display: none;
+}
+
 a {
   color: var(--accent);
   text-decoration: none;
@@ -209,9 +418,20 @@ a:hover {
     height: 120px;
   }
 
+  /* Keep the toggle in the page flow so it never covers the header */
   .lang-toggle {
+    position: absolute;
     top: 10px;
     right: 10px;
+  }
+
+  .page {
+    padding-top: 3.5rem;
+  }
+
+  .lb-close {
+    top: 0.5rem;
+    right: 0.5rem;
   }
 
   .lang-toggle button {
@@ -244,8 +464,27 @@ a:hover {
     display: none !important;
   }
 
-  .lang-toggle {
+  .lang-toggle,
+  .lightbox,
+  .hint,
+  .project-media {
     display: none !important;
+  }
+
+  .project-grid {
+    display: block;
+  }
+
+  .project {
+    border: 0;
+    border-left: 3px solid var(--border);
+    border-radius: 0;
+    margin-bottom: 1rem;
+    break-inside: avoid;
+  }
+
+  .project-body {
+    padding: 0 0 0 1rem;
   }
 
   a {

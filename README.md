@@ -4,9 +4,7 @@ A professional, responsive, bilingual CV/Resume page for Nicolai Sikora hosted o
 
 ## 🌐 View Live
 
-Visit the CV at: `https://yourusername.github.io/CV_page/`
-
-(Replace `yourusername` with your actual GitHub username)
+Visit the CV at: https://nicosik.github.io/CV_page/
 
 ## 🌍 Bilingual Support
 
@@ -23,7 +21,7 @@ This CV includes:
 - **Work Experience**: Teaching assistant roles, grading positions, and professional work
 - **Education**: Master's and Bachelor's degrees from the University of Oslo
 - **Skills**: Programming languages, web technologies, databases, and tools
-- **Projects**: Notable academic and personal projects
+- **Projects**: Project cards with screenshots/cover images, a per-card image carousel and a click-to-enlarge lightbox
 - **Languages**: Norwegian, English, and Polish proficiency
 
 ## 🎨 Customization
@@ -32,7 +30,11 @@ To update the CV content:
 
 1. Edit `index.html` and modify both the English (`.lang-en`) and Norwegian (`.lang-no`) sections
 2. (Optional) Modify `style.css` to change colors, fonts, or layout
-3. Add your profile picture as `CV_picture.jpg` in the root directory (optional)
+3. Profile picture: `images/profile.jpg` (square, shown on the page) and `CV_picture.jpg` (used for link previews)
+4. Project images live in `images/projects/`. To add or replace one, drop the file there and add an `<img>` inside
+   the project's `.project-media` block in `index.html`. Several `<img>` tags in one block become a carousel
+   automatically; add `<span class="media-count">1 / N</span>` to show a counter. The `alt` text is used as the
+   caption in the enlarged view.
 
 ## 🚀 GitHub Pages Setup
 
@@ -43,9 +45,7 @@ This repository is configured to use GitHub Pages. To enable it:
 3. Under "Source", select the branch (usually `main` or `master`)
 4. Click "Save"
 
-Your CV will be published at `https://yourusername.github.io/CV_page/` within a few minutes.
-
-(Replace `yourusername` with your actual GitHub username)
+The CV is published at https://nicosik.github.io/CV_page/ within a few minutes.
 
 ## 📱 Features
 

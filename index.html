@@ -72,7 +72,7 @@
         </ul>
       </div>
 
-      <img src="CV_picture.jpg" alt="Portrait of Nicolai Sikora" class="profile-pic">
+      <img src="images/profile.jpg" width="600" height="600" alt="Portrait of Nicolai Sikora" class="profile-pic">
     </header>
 
     <p class="profile lang-en">
@@ -100,10 +100,10 @@
             <span class="meta lang-no" style="display:none;">Universitetet i Oslo • 01/2026 – 06/2026</span>
           </div>
           <ul class="bullets lang-en">
-            <li>Starting Jan 2026; supporting students with OS concepts and course assignments.</li>
+            <li>Run group sessions and help students with OS concepts and course assignments.</li>
           </ul>
           <ul class="bullets lang-no" style="display:none;">
-            <li>Oppstart januar 2026; veiledning og retting av studenter i operativsystem-konsepter og innleveringer.</li>
+            <li>Holder gruppetimer og veileder studenter i operativsystem-konsepter og innleveringer.</li>
           </ul>
         </div>
 
@@ -176,6 +176,128 @@
         </div>
       </section>
 
+      <section id="projects">
+        <h3 class="lang-en">Projects</h3>
+        <h3 class="lang-no" style="display:none;">Prosjekter</h3>
+        <p class="hint lang-en">Click an image to enlarge it.</p>
+        <p class="hint lang-no" style="display:none;">Klikk på et bilde for å forstørre det.</p>
+
+        <div class="project-grid">
+
+          <article class="project">
+            <div class="project-media" data-gallery>
+              <img src="images/projects/ticker-ticker.jpg" width="1400" height="1180" loading="lazy"
+                   alt="Ticker: watchlist and stock detail view with a live price chart">
+              <img src="images/projects/ticker-holdings.jpg" width="1400" height="1180" loading="lazy"
+                   alt="Ticker: Holdings view combining several brokers into one NOK total (invented holdings)">
+              <span class="media-count">1 / 2</span>
+            </div>
+            <div class="project-body">
+              <h4><a href="https://github.com/NicoSik/StockApp">Ticker</a></h4>
+              <span class="meta lang-en">Personal project</span>
+              <span class="meta lang-no" style="display:none;">Personlig prosjekt</span>
+              <p class="lang-en">
+                Stock watcher and multi-broker portfolio aggregator: live watchlists, scrubbable price charts,
+                a paper portfolio and price alerts. Pulls holdings from eToro, Nordnet and DNB into one NOK total.
+              </p>
+              <p class="lang-no" style="display:none;">
+                Aksjeoverv&aring;ker og portef&oslash;ljesamler for flere meglere: live watchlister, interaktive kursgrafer,
+                papirportef&oslash;lje og prisvarsler. Henter beholdning fra eToro, Nordnet og DNB til &eacute;n samlet NOK-sum.
+              </p>
+              <p class="lang-en">
+                Wrote parsers for two undocumented export formats (UTF-16LE CSV, and XLSX read straight from the zip)
+                and reconciles every import against the file&rsquo;s own total.
+              </p>
+              <p class="lang-no" style="display:none;">
+                Skrev parsere for to udokumenterte eksportformater (UTF-16LE CSV og XLSX lest rett fra zip-filen)
+                og avstemmer hver import mot filens egen totalsum.
+              </p>
+              <ul class="tags">
+                <li>Java 17</li><li>Javalin</li><li>PostgreSQL</li><li>JavaScript</li><li>REST APIs</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-media" data-gallery>
+              <img src="images/projects/os.svg" width="1200" height="750" loading="lazy"
+                   alt="Illustration: virtual pages mapped to physical frames through a page table">
+            </div>
+            <div class="project-body">
+              <h4 class="lang-en">Operating System (IN3000)</h4>
+              <h4 class="lang-no" style="display:none;">Operativsystem (IN3000)</h4>
+              <span class="meta lang-en">University of Oslo &bull; 01/2025 &ndash; 06/2025</span>
+              <span class="meta lang-no" style="display:none;">Universitetet i Oslo &bull; 01/2025 &ndash; 06/2025</span>
+              <p class="lang-en">
+                Built a minimal operating system in x86 assembly and C, with paging and memory management,
+                process scheduling and basic file handling. Gave me a solid grasp of kernel-level architecture
+                and low-level debugging, and is the course I now teach.
+              </p>
+              <p class="lang-no" style="display:none;">
+                Utviklet et minimalt operativsystem i x86-assembly og C, med paging og minneh&aring;ndtering,
+                prosessplanlegging og enkel filh&aring;ndtering. Ga meg god forst&aring;else av kjernearkitektur
+                og feils&oslash;king p&aring; lavt niv&aring;, og er emnet jeg n&aring; er gruppel&aelig;rer i.
+              </p>
+              <ul class="tags">
+                <li>C</li><li>x86 Assembly</li><li>Paging</li><li>Scheduling</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-media" data-gallery>
+              <img src="images/projects/chalmers.svg" width="1200" height="750" loading="lazy"
+                   alt="Inspector Chalmers logo: DHIS2 app for school inspections">
+            </div>
+            <div class="project-body">
+              <h4><a href="https://github.com/NicoSik/Chalmers">Inspector Chalmers</a></h4>
+              <span class="meta lang-en">Team project &bull; IN5320, University of Oslo</span>
+              <span class="meta lang-no" style="display:none;">Teamprosjekt &bull; IN5320, Universitetet i Oslo</span>
+              <p class="lang-en">
+                DHIS2 app for digital school inspections in the Gambia. Collects, analyses and visualises
+                inspection data, and works offline: submissions are queued in IndexedDB and synced when the
+                connection returns. A course prototype, not running in production.
+              </p>
+              <p class="lang-no" style="display:none;">
+                DHIS2-app for digitale skoleinspeksjoner i Gambia. Samler inn, analyserer og visualiserer
+                inspeksjonsdata, og fungerer offline: innsendinger lagres i IndexedDB og synkroniseres n&aring;r
+                nettet er tilbake. En prototype fra et emne, ikke i produksjon.
+              </p>
+              <ul class="tags">
+                <li>React</li><li>DHIS2</li><li>PWA</li><li>IndexedDB</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-media" data-gallery>
+              <img src="images/projects/energy.svg" width="1200" height="750" loading="lazy"
+                   alt="Illustration: household load curve, cost-only versus cost plus peak penalty">
+            </div>
+            <div class="project-body">
+              <h4 class="lang-en"><a href="https://github.com/NicoSik/IN5410">Energy Optimization (IN5410)</a></h4>
+              <h4 class="lang-no" style="display:none;"><a href="https://github.com/NicoSik/IN5410">Energioptimalisering (IN5410)</a></h4>
+              <span class="meta lang-en">Course project &bull; University of Oslo</span>
+              <span class="meta lang-no" style="display:none;">Emneprosjekt &bull; Universitetet i Oslo</span>
+              <p class="lang-en">
+                Schedules shiftable household appliances (dishwasher, laundry, EV charging) under real-time
+                pricing to minimise cost, scaled to a 30-household neighbourhood, and adds a peak-load penalty
+                that spreads demand across the day.
+              </p>
+              <p class="lang-no" style="display:none;">
+                Planlegger flyttbare husholdningsapparater (oppvaskmaskin, vask, elbillading) etter sanntidspris
+                for &aring; minimere kostnad, skalert til et nabolag med 30 husstander, og legger til en straff for
+                toppbelastning som sprer forbruket utover d&oslash;gnet.
+              </p>
+              <ul class="tags">
+                <li>Python</li><li>SciPy (MILP)</li><li>NumPy</li><li>Matplotlib</li>
+              </ul>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
       <section>
         <h3 class="lang-en">Education</h3>
         <h3 class="lang-no" style="display:none;">Utdanning</h3>
@@ -233,7 +355,13 @@
         <h4 class="lang-en">Databases</h4>
         <h4 class="lang-no" style="display:none;">Databaser</h4>
         <ul class="taglist">
-          <li>SQL</li><li>SPARQL</li>
+          <li>SQL</li><li>PostgreSQL</li><li>SPARQL</li>
+        </ul>
+
+        <h4 class="lang-en">Machine Learning &amp; Data</h4>
+        <h4 class="lang-no" style="display:none;">Maskinl&aelig;ring og data</h4>
+        <ul class="taglist">
+          <li>PyTorch</li><li>scikit-learn</li><li>pandas</li><li>NumPy</li>
         </ul>
 
         <h4 class="lang-en">Tools & Systems</h4>
@@ -241,49 +369,6 @@
         <ul class="taglist">
           <li>Git</li><li>Docker</li><li>Linux</li>
         </ul>
-      </section>
-
-      <section>
-        <h3 class="lang-en">Projects</h3>
-        <h3 class="lang-no" style="display:none;">Prosjekter</h3>
-
-        <div class="item">
-          <div class="role">
-            <h4 class="lang-en">Operating System (IN3000)</h4>
-            <h4 class="lang-no" style="display:none;">Operativsystem (IN3000)</h4>
-            <span class="meta lang-en">University of Oslo • 01/2025 – 06/2025</span>
-            <span class="meta lang-no" style="display:none;">Universitetet i Oslo • 01/2025 – 06/2025</span>
-          </div>
-          <ul class="bullets lang-en">
-            <li>Built a minimal operating system in x86 assembly and C.</li>
-            <li>Implemented paging/memory management, process scheduling, and basic file handling.</li>
-            <li>Strengthened understanding of kernel-level architecture, debugging, and low-level performance tradeoffs.</li>
-          </ul>
-          <ul class="bullets lang-no" style="display:none;">
-            <li>Utviklet et minimalt operativsystem i x86-assembly og C.</li>
-            <li>Implementerte paging, minnehåndtering, prosessplanlegging og enkel filhåndtering.</li>
-            <li>Erfaring med lavnivå utvikling og feilsøking på lavt nivå.</li>
-          </ul>
-        </div>
-
-        <div class="item">
-          <div class="role">
-            <h4><a href="https://github.com/NicoSik/StockApp" class="lang-en">Mini Stock Broker</a></h4>
-            <h4><a href="https://github.com/NicoSik/StockApp" class="lang-no" style="display:none;">Mini aksjemegler</a></h4>
-            <span class="meta lang-en">Personal project</span>
-            <span class="meta lang-no" style="display:none;">Personlig prosjekt</span>
-          </div>
-          <ul class="bullets lang-en">
-            <li>Personal project to practice backend development and API integration using market data.</li>
-            <li>Fetches stock data via the Alpaca API (NASDAQ/NYSE) and refreshes data daily before market open.</li>
-            <li>Backend: Java, SQL • Frontend: HTML, JavaScript</li>
-          </ul>
-          <ul class="bullets lang-no" style="display:none;">
-            <li>Backend-prosjekt for å øve på API-integrasjon og databehandling.</li>
-            <li>Henter aksjedata via Alpaca-API og oppdaterer daglig før børsåpning.</li>
-            <li>Backend: Java, SQL • Frontend: HTML, JavaScript</li>
-          </ul>
-        </div>
       </section>
 
       <section>
@@ -300,6 +385,16 @@
       </section>
     </main>
   </div>
+
+  <dialog id="lightbox" class="lightbox" aria-label="Image viewer">
+    <button class="lb-close" aria-label="Close">&times;</button>
+    <button class="lb-nav lb-prev" aria-label="Previous image">&lsaquo;</button>
+    <figure>
+      <img alt="">
+      <figcaption></figcaption>
+    </figure>
+    <button class="lb-nav lb-next" aria-label="Next image">&rsaquo;</button>
+  </dialog>
 
   <script>
     let currentLang = 'en';
@@ -327,6 +422,74 @@
         localStorage.setItem('cvLang', 'en');
       }
     }
+
+    // Project image galleries + lightbox
+    const lightbox = document.getElementById('lightbox');
+    const lbImg = lightbox.querySelector('img');
+    const lbCaption = lightbox.querySelector('figcaption');
+    let lbImages = [];
+    let lbIndex = 0;
+
+    function showLightboxImage(i) {
+      lbIndex = (i + lbImages.length) % lbImages.length;
+      const img = lbImages[lbIndex];
+      lbImg.src = img.currentSrc || img.src;
+      lbImg.alt = img.alt;
+      lbCaption.textContent = img.alt;
+      lightbox.classList.toggle('single', lbImages.length < 2);
+    }
+
+    document.querySelectorAll('[data-gallery]').forEach(media => {
+      const images = Array.from(media.querySelectorAll('img'));
+      const counter = media.querySelector('.media-count');
+      let current = 0;
+
+      images.forEach((img, i) => {
+        img.tabIndex = 0;
+        img.setAttribute('role', 'button');
+        img.classList.toggle('active', i === 0);
+        const open = () => {
+          lbImages = images;
+          showLightboxImage(i);
+          lightbox.showModal();
+        };
+        img.addEventListener('click', open);
+        img.addEventListener('keydown', e => {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
+        });
+      });
+
+      // Cycle the card preview when it holds more than one image
+      if (images.length > 1) {
+        const prev = document.createElement('button');
+        const next = document.createElement('button');
+        prev.className = 'media-nav media-prev';
+        next.className = 'media-nav media-next';
+        prev.setAttribute('aria-label', 'Previous image');
+        next.setAttribute('aria-label', 'Next image');
+        prev.innerHTML = '&lsaquo;';
+        next.innerHTML = '&rsaquo;';
+        const go = step => {
+          images[current].classList.remove('active');
+          current = (current + step + images.length) % images.length;
+          images[current].classList.add('active');
+          if (counter) counter.textContent = (current + 1) + ' / ' + images.length;
+        };
+        prev.addEventListener('click', () => go(-1));
+        next.addEventListener('click', () => go(1));
+        media.append(prev, next);
+      }
+    });
+
+    lightbox.querySelector('.lb-close').addEventListener('click', () => lightbox.close());
+    lightbox.querySelector('.lb-prev').addEventListener('click', () => showLightboxImage(lbIndex - 1));
+    lightbox.querySelector('.lb-next').addEventListener('click', () => showLightboxImage(lbIndex + 1));
+    lightbox.addEventListener('click', e => { if (e.target === lightbox) lightbox.close(); });
+    lightbox.addEventListener('keydown', e => {
+      if (lbImages.length < 2) return;
+      if (e.key === 'ArrowLeft') showLightboxImage(lbIndex - 1);
+      if (e.key === 'ArrowRight') showLightboxImage(lbIndex + 1);
+    });
 
     // Load saved language preference
     window.addEventListener('DOMContentLoaded', () => {
