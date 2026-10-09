@@ -6,14 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Nicolai Sikora - MSc Informatics student at University of Oslo specializing in systems programming and software architecture. Proficient in C, Java, Python.">
-  <meta name="keywords" content="Nicolai Sikora, Informatics, University of Oslo, programmer, systems architecture, software development, C, Java, Python, Linux, Docker, Git, operating systems">
+  <meta name="description" content="Nicolai Sikora - MSc Informatics student at the University of Oslo (Programming and Systems Architecture), writing a thesis on malware detection in deep neural networks. Java, Python, C, PyTorch.">
+  <meta name="keywords" content="Nicolai Sikora, Informatics, University of Oslo, programmer, systems architecture, software development, machine learning, IT security, malware detection, C, Java, Python, PyTorch, Linux, Docker, Git, operating systems">
   <meta name="author" content="Nicolai Sikora">
   <link rel="canonical" href="https://nicosik.github.io/CV_page/">
   
   <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="Nicolai Sikora - CV">
-  <meta property="og:description" content="MSc Informatics student at University of Oslo specializing in systems programming and software architecture. Proficient in C, Java, Python.">
+  <meta property="og:description" content="MSc Informatics student at the University of Oslo (Programming and Systems Architecture), writing a thesis on malware detection in deep neural networks. Java, Python, C, PyTorch.">
   <meta property="og:type" content="profile">
   <meta property="og:url" content="https://nicosik.github.io/CV_page/">
   <meta property="og:image" content="https://nicosik.github.io/CV_page/CV_picture.jpg">
@@ -22,7 +22,7 @@
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Nicolai Sikora - CV">
-  <meta name="twitter:description" content="MSc Informatics student at University of Oslo specializing in systems programming and software architecture. Proficient in C, Java, Python.">
+  <meta name="twitter:description" content="MSc Informatics student at the University of Oslo (Programming and Systems Architecture), writing a thesis on malware detection in deep neural networks. Java, Python, C, PyTorch.">
   
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
@@ -38,7 +38,7 @@
     "email": "nicolai.sikora1@gmail.com",
     "telephone": "+47 401 67 250",
     "url": "https://nicosik.github.io/CV_page/",
-    "description": "MSc student at University of Oslo focused on systems programming and software architecture. Experience as teaching assistant and grader. Proficient in C, Java, Python, Linux, Git, and Docker.",
+    "description": "MSc student in Informatics: Programming and Systems Architecture at the University of Oslo, writing a thesis on malware detection in deep neural networks. Teaching assistant and grader. Java, Python, C, PyTorch, PostgreSQL, Docker.",
     "image": "https://nicosik.github.io/CV_page/CV_picture.jpg",
     "sameAs": [
       "https://github.com/NicoSik",
@@ -48,13 +48,34 @@
   </script>
   
   <link rel="stylesheet" href="style.css">
+  <script>
+    // Set the theme before first paint to avoid a light/dark flash
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('cvTheme'); } catch (e) {}
+      if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.dataset.theme = t;
+    })();
+  </script>
 </head>
 
 <body>
-  <!-- Language Toggle Button -->
-  <div class="lang-toggle">
-    <button id="langBtn" onclick="toggleLanguage()">🇳🇴 Norsk</button>
-  </div>
+  <!-- Sticky top bar: section navigation, theme and language toggles -->
+  <nav class="topbar" aria-label="Sections">
+    <div class="topbar-inner">
+      <ul class="nav-links">
+        <li><a href="#experience"><span class="lang-en">Experience</span><span class="lang-no" style="display:none;">Erfaring</span></a></li>
+        <li><a href="#projects"><span class="lang-en">Projects</span><span class="lang-no" style="display:none;">Prosjekter</span></a></li>
+        <li><a href="#education"><span class="lang-en">Education</span><span class="lang-no" style="display:none;">Utdanning</span></a></li>
+        <li><a href="#skills"><span class="lang-en">Skills</span><span class="lang-no" style="display:none;">Ferdigheter</span></a></li>
+        <li><a href="#languages"><span class="lang-en">Languages</span><span class="lang-no" style="display:none;">Språk</span></a></li>
+      </ul>
+      <div class="topbar-actions">
+        <button id="themeBtn" class="icon-btn" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
+        <button id="langBtn" class="lang-btn" onclick="toggleLanguage()">🇳🇴 Norsk</button>
+      </div>
+    </div>
+  </nav>
 
   <div class="page">
 
@@ -65,94 +86,76 @@
         <h2 class="lang-no" style="display:none;">Informatikkstudent • Programmering og systemarkitektur</h2>
 
         <ul class="contact-row">
-          <li><a href="mailto:nicolai.sikora1@gmail.com">nicolai.sikora1@gmail.com</a></li>
+          <li>
+            <a href="mailto:nicolai.sikora1@gmail.com">nicolai.sikora1@gmail.com</a>
+            <button class="copy-btn" data-copy="nicolai.sikora1@gmail.com" aria-label="Copy email address" title="Copy email address">⧉</button>
+          </li>
           <li>+47 401 67 250</li>
           <li><a href="https://github.com/NicoSik">github.com/NicoSik</a></li>
           <li><a href="https://www.linkedin.com/in/nicolai-sikora-620843251/">linkedin.com/in/nicolai-sikora</a></li>
         </ul>
       </div>
 
-      <img src="CV_picture.jpg" alt="Portrait of Nicolai Sikora" class="profile-pic">
+      <img src="images/profile.jpg" width="600" height="600" alt="Portrait of Nicolai Sikora" class="profile-pic">
     </header>
 
     <p class="profile lang-en">
-      MSc student (University of Oslo) focused on systems programming and software architecture.
-      Experience as grader/TA. Comfortable in C/Java/Python, Linux, Git, and Docker.
+      Fifth-year student in the master&rsquo;s programme Informatics: Programming and Systems Architecture at the
+      University of Oslo, finishing in summer 2027. My thesis is about detecting malware hidden in deep neural
+      networks, at the intersection of machine learning and IT security. I have worked as a teaching assistant
+      in several informatics courses. Before university I served in His Majesty The King&rsquo;s Guard, where I
+      received <em>Excellent</em> on all four points of my service evaluation.
     </p>
     <p class="profile lang-no" style="display:none;">
-      Masterstudent ved Universitetet i Oslo med fokus på systemprogrammering og
-      programvarearkitektur. Erfaring som gruppelærer og retter.
-      Komfortabel med C, Java og Python, samt Linux, Git og Docker.
+      Jeg går femte året på masteren i Informatikk: Programmering og systemarkitektur ved UiO, og blir ferdig
+      sommeren 2027. Masteroppgaven handler om å oppdage skadevare gjemt i dype nevrale nettverk, og ligger i
+      skjæringen mellom maskinlæring og IT-sikkerhet. Gjennom årene som student har jeg bistått som gruppelærer
+      i en rekke informatikkemner. Før studentlivet var jeg i førstegangstjenesten i Kongens Garde, hvor jeg
+      mottok <em>Utmerket</em> på alle fire punkter i tjenesteuttalelsen.
     </p>
 
     <hr class="header-divider">
 
     <main>
-      <section>
+      <section id="experience">
         <h3 class="lang-en">Work Experience</h3>
         <h3 class="lang-no" style="display:none;">Arbeidserfaring</h3>
 
         <div class="item">
           <div class="role">
-            <h4 class="lang-en">Teaching Assistant (IN3000/IN4000) Operating Systems</h4>
-            <h4 class="lang-no" style="display:none;">Gruppelærer (IN3000/IN4000) Operativsystemer</h4>
-            <span class="meta lang-en">University of Oslo • 01/2026 – 06/2026</span>
-            <span class="meta lang-no" style="display:none;">Universitetet i Oslo • 01/2026 – 06/2026</span>
+            <h4 class="lang-en">Teaching Assistant &amp; Grader</h4>
+            <h4 class="lang-no" style="display:none;">Gruppelærer og retter</h4>
+            <span class="meta lang-en">Department of Informatics, University of Oslo &bull; 08/2023 &ndash; Present</span>
+            <span class="meta lang-no" style="display:none;">Institutt for informatikk, Universitetet i Oslo &bull; 08/2023 &ndash; Nåværende</span>
           </div>
           <ul class="bullets lang-en">
-            <li>Starting Jan 2026; supporting students with OS concepts and course assignments.</li>
+            <li><em>Teaching Assistant, Project in Programming (IN2031), Aug 2026 &ndash; present:</em> lead weekly group sessions, help students through their project work and grade their assignments.</li>
+            <li><em>Teaching Assistant, Operating Systems (IN3000/IN4000), spring 2026:</em> led weekly lab sessions, guided students through operating system concepts and graded their assignments.</li>
+            <li><em>Grader, Project in Programming (IN2030 and IN2031), 2023 and 2025:</em> graded mandatory assignments and gave written feedback.</li>
+            <li>Completed the Faculty of Mathematics and Natural Sciences&rsquo; Learning Assistant course (KURT) in teaching and supervision, spring 2026.</li>
           </ul>
           <ul class="bullets lang-no" style="display:none;">
-            <li>Oppstart januar 2026; veiledning og retting av studenter i operativsystem-konsepter og innleveringer.</li>
+            <li><em>Gruppelærer, Prosjekt i programmering (IN2031), aug 2026 &ndash; nå:</em> leder ukentlige gruppetimer, hjelper studentene gjennom prosjektarbeidet og retter innleveringene deres.</li>
+            <li><em>Gruppelærer, Operativsystemer (IN3000/IN4000), vår 2026:</em> ledet ukentlige labtimer, veiledet studenter i operativsystemkonsepter og rettet innleveringene deres.</li>
+            <li><em>Retter, Prosjekt i programmering (IN2030 og IN2031), 2023 og 2025:</em> rettet obligatoriske oppgaver og ga skriftlige tilbakemeldinger til kull.</li>
+            <li>Tok MN-fakultetets Learning Assistant-kurs (KURT) i pedagogikk og veiledning, vår 2026.</li>
           </ul>
         </div>
 
         <div class="item">
           <div class="role">
-            <h4 class="lang-en">Grader (IN2031) Project in Programming</h4>
-            <h4 class="lang-no" style="display:none;">Retter (IN2031) Prosjekt i programmering</h4>
-            <span class="meta lang-en">University of Oslo • 09/2025 – 11/2025</span>
-            <span class="meta lang-no" style="display:none;">Universitetet i Oslo • 09/2025 – 11/2025</span>
+            <h4 class="lang-en">Keyholder &amp; Health and Safety Representative</h4>
+            <h4 class="lang-no" style="display:none;">Låseansvarlig og verneombud</h4>
+            <span class="meta lang-en">Kiwi Minipris, Oslo &bull; 04/2024 &ndash; Present</span>
+            <span class="meta lang-no" style="display:none;">Kiwi Minipris, Oslo &bull; 04/2024 &ndash; Nåværende</span>
           </div>
           <ul class="bullets lang-en">
-            <li>Graded mandatory assignments and provided structured feedback to students.</li>
+            <li>Responsible for opening, closing and cash handling.</li>
+            <li>Elected health and safety representative: follow up HSE requirements and risk assessments, and raise issues with management.</li>
           </ul>
           <ul class="bullets lang-no" style="display:none;">
-            <li>Rettet obligatoriske oppgaver og ga strukturert tilbakemelding til studenter.</li>
-          </ul>
-        </div>
-
-        <div class="item">
-          <div class="role">
-            <h4 class="lang-en">Keyholder & Health and Safety Representative</h4>
-            <h4 class="lang-no" style="display:none;">Nøkkelbærer & Verneombud</h4>
-            <span class="meta lang-en">Kiwi Minipris • 04/2024 – Present</span>
-            <span class="meta lang-no" style="display:none;">Kiwi Minipris • 04/2024 – Nåværende</span>
-          </div>
-          <ul class="bullets lang-en">
-            <li>Handled opening/closing routines, cash procedures, and daily operational security.</li>
-            <li>Elected HSE representative, tracked risks, ensured compliance, and coordinated with management.</li>
-            <li>Delivered customer support and resolved issues, collaborated closely with the team in daily operations.</li>
-          </ul>
-          <ul class="bullets lang-no" style="display:none;">
-            <li>Ansvar for åpne-/stengerutiner, kontanthåndtering og daglig sikkerhet.</li>
-            <li>Valgt verneombud, fulgte opp HMS, risikovurderinger og dialog med ledelse.</li>
-            <li>Kundeservice og problemløsning i samarbeid med teamet.</li>
-          </ul>
-        </div>
-
-        <div class="item">
-          <div class="role">
-            <h4 class="lang-en">Grader (IN2030) Project in Programming</h4>
-            <h4 class="lang-no" style="display:none;">Retter (IN2030) Prosjekt i programmering</h4>
-            <span class="meta lang-en">University of Oslo • 08/2023 – 12/2023</span>
-            <span class="meta lang-no" style="display:none;">Universitetet i Oslo • 08/2023 – 12/2023</span>
-          </div>
-          <ul class="bullets lang-en">
-            <li>Graded mandatory assignments and provided structured feedback to students.</li>
-          </ul>
-          <ul class="bullets lang-no" style="display:none;">
-            <li>Rettet obligatoriske oppgaver og ga strukturert tilbakemelding til studenter.</li>
+            <li>Har ansvar for åpning, stenging og kontanthåndtering.</li>
+            <li>Valgt verneombud. Følger opp HMS-krav og risikovurderinger, og tar opp saker med ledelsen.</li>
           </ul>
         </div>
 
@@ -160,38 +163,166 @@
           <div class="role">
             <h4 class="lang-en">S6 Assistant</h4>
             <h4 class="lang-no" style="display:none;">S6-assistent</h4>
-            <span class="meta lang-en">Norwegian Armed Forces, HMKG • 01/2021 – 01/2022</span>
-            <span class="meta lang-no" style="display:none;">Forsvaret, HMKG • 01/2021 – 01/2022</span>
+            <span class="meta lang-en">Norwegian Armed Forces, His Majesty The King&rsquo;s Guard (HMKG) &bull; 01/2021 &ndash; 01/2022</span>
+            <span class="meta lang-no" style="display:none;">Forsvaret, førstegangstjeneste ved Hans Majestet Kongens Garde (HMKG) &bull; 01/2021 &ndash; 01/2022</span>
           </div>
           <ul class="bullets lang-en">
-            <li>Held training on handling sensitive/classified information in line with security procedures.</li>
-            <li>Performed checks and maintenance of communication equipment to ensure readiness and reliability.</li>
-            <li>Supported camp communications/ICT, including procurement and troubleshooting.</li>
+            <li>Handled user administration in the battalion staff, and planned and held courses for other soldiers on handling classified and sensitive information.</li>
+            <li>Maintained communications equipment and supported the camp&rsquo;s IT operations.</li>
+            <li>Service evaluation: <em>Excellent</em> on all four assessment points: overall impression, independence, cooperation and communication, and drive.</li>
           </ul>
           <ul class="bullets lang-no" style="display:none;">
-            <li>Holdt kurs i håndtering av gradert og sensitiv informasjon.</li>
-            <li>Vedlikehold og kontroll av samband- og kommunikasjonsutstyr.</li>
-            <li>Støttet leirens IKT- og sambandsdrift.</li>
+            <li>Hadde ansvar for brukeradministrasjon i bataljonsstaben, samt planla og holdt kurs for de andre soldatene i håndtering av gradert og sensitiv informasjon.</li>
+            <li>Vedlikeholdt samband og kommunikasjonsutstyr, i tillegg til å støtte IKT-driften i leiren.</li>
+            <li>Tjenesteuttalelse med <em>Utmerket</em> på alle fire vurderingspunkter: hovedinntrykk, selvstendighet, samarbeid og kommunikasjon, og fremferd.</li>
           </ul>
         </div>
       </section>
 
-      <section>
+      <section id="projects">
+        <h3 class="lang-en">Projects</h3>
+        <h3 class="lang-no" style="display:none;">Prosjekter</h3>
+        <p class="hint lang-en">Filter by technology, or click an image to enlarge it.</p>
+        <p class="hint lang-no" style="display:none;">Filtrer på teknologi, eller klikk på et bilde for å forstørre det.</p>
+
+        <div class="filter-bar" role="group" aria-label="Filter projects"></div>
+
+        <div class="project-grid">
+
+          <article class="project">
+            <div class="project-media" data-gallery>
+              <img src="images/projects/ticker-ticker.jpg" width="1400" height="1180" loading="lazy"
+                   alt="Ticker: watchlist and stock detail view with a live price chart">
+              <img src="images/projects/ticker-holdings.jpg" width="1400" height="1180" loading="lazy"
+                   alt="Ticker: Holdings view combining several brokers into one NOK total (invented holdings)">
+              <span class="media-count">1 / 2</span>
+            </div>
+            <div class="project-body">
+              <h4><a href="https://github.com/NicoSik/StockApp">Ticker</a></h4>
+              <span class="meta lang-en">Personal project &bull; 2025 &ndash; Present</span>
+              <span class="meta lang-no" style="display:none;">Personlig prosjekt &bull; 2025 &ndash; Nåværende</span>
+              <p class="lang-en">
+                Stock watcher and multi-broker portfolio aggregator: live watchlists, scrubbable price charts,
+                a paper portfolio and price alerts. Pulls holdings from eToro, Nordnet and DNB into one NOK total.
+              </p>
+              <p class="lang-no" style="display:none;">
+                Aksjeoverv&aring;ker og portef&oslash;ljesamler for flere meglere: live watchlister, interaktive kursgrafer,
+                papirportef&oslash;lje og prisvarsler. Henter beholdning fra eToro, Nordnet og DNB til &eacute;n samlet NOK-sum.
+              </p>
+              <ul class="bullets lang-en">
+                <li>Live prices from the Alpaca API. Every import is stored separately, so earlier data is never overwritten.</li>
+                <li>Wrote my own parsers for two undocumented export formats (CSV and Excel), tested against real export files.</li>
+                <li>Matches securities on the price stated in the export rather than on name, and reconciles every import against the file&rsquo;s total to catch mismatches and partial reads.</li>
+              </ul>
+              <ul class="bullets lang-no" style="display:none;">
+                <li>Live priser fra Alpaca API. Hver import lagres for seg, så tidligere data aldri overskrives.</li>
+                <li>Skrev egne parsere for to udokumenterte eksportformater (CSV og Excel), testet mot ekte eksportfiler.</li>
+                <li>Matcher verdipapirer på prisen eksporten selv oppgir i stedet for på navn, og avstemmer hver import mot filens totalbeløp for å fange opp feilmatch og delvis innlesning.</li>
+              </ul>
+              <ul class="tags">
+                <li>Java</li><li>Javalin</li><li>PostgreSQL</li><li>Alpaca API</li><li>JUnit</li><li>Maven</li><li>JavaScript</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-media" data-gallery>
+              <img src="images/projects/os.svg" width="1200" height="750" loading="lazy"
+                   alt="Illustration: virtual pages mapped to physical frames through a page table">
+            </div>
+            <div class="project-body">
+              <h4 class="lang-en">Operating System (IN3000)</h4>
+              <h4 class="lang-no" style="display:none;">Operativsystem (IN3000)</h4>
+              <span class="meta lang-en">University of Oslo &bull; 01/2025 &ndash; 06/2025</span>
+              <span class="meta lang-no" style="display:none;">Universitetet i Oslo &bull; 01/2025 &ndash; 06/2025</span>
+              <p class="lang-en">
+                Built a minimal operating system in x86 assembly and C, with paging and memory management,
+                process scheduling and basic file handling. Gave me a solid grasp of kernel-level architecture
+                and low-level debugging, and I later taught the course as a TA.
+              </p>
+              <p class="lang-no" style="display:none;">
+                Utviklet et minimalt operativsystem i x86-assembly og C, med paging og minneh&aring;ndtering,
+                prosessplanlegging og enkel filh&aring;ndtering. Ga meg god forst&aring;else av kjernearkitektur
+                og feils&oslash;king p&aring; lavt niv&aring;, og jeg var senere gruppel&aelig;rer i emnet.
+              </p>
+              <ul class="tags">
+                <li>C</li><li>x86 Assembly</li><li>Paging</li><li>Scheduling</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-media" data-gallery>
+              <img src="images/projects/chalmers.svg" width="1200" height="750" loading="lazy"
+                   alt="Inspector Chalmers logo: DHIS2 app for school inspections">
+            </div>
+            <div class="project-body">
+              <h4><a href="https://github.com/NicoSik/Chalmers">Inspector Chalmers</a></h4>
+              <span class="meta lang-en">Team project &bull; IN5320, University of Oslo &bull; 08/2025 &ndash; 11/2025</span>
+              <span class="meta lang-no" style="display:none;">Teamprosjekt &bull; IN5320, Universitetet i Oslo &bull; 08/2025 &ndash; 11/2025</span>
+              <p class="lang-en">
+                DHIS2 app for digital school inspections in the Gambia. Collects, analyses and visualises
+                inspection data, and works offline: submissions are queued in IndexedDB and synced when the
+                connection returns. I was Scrum master for the group. A course prototype, not running in production.
+              </p>
+              <p class="lang-no" style="display:none;">
+                DHIS2-app for digitale skoleinspeksjoner i Gambia. Samler inn, analyserer og visualiserer
+                inspeksjonsdata, og fungerer offline: innsendinger lagres i IndexedDB og synkroniseres n&aring;r
+                nettet er tilbake. Jeg var Scrum master for gruppen. En prototype fra et emne, ikke i produksjon.
+              </p>
+              <ul class="tags">
+                <li>React</li><li>JavaScript</li><li>DHIS2</li><li>IndexedDB</li><li>Scrum</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-media" data-gallery>
+              <img src="images/projects/energy.svg" width="1200" height="750" loading="lazy"
+                   alt="Illustration: household load curve, cost-only versus cost plus peak penalty">
+            </div>
+            <div class="project-body">
+              <h4 class="lang-en"><a href="https://github.com/NicoSik/IN5410">Energy Optimization (IN5410)</a></h4>
+              <h4 class="lang-no" style="display:none;"><a href="https://github.com/NicoSik/IN5410">Energioptimalisering (IN5410)</a></h4>
+              <span class="meta lang-en">Course project &bull; University of Oslo</span>
+              <span class="meta lang-no" style="display:none;">Emneprosjekt &bull; Universitetet i Oslo</span>
+              <p class="lang-en">
+                Schedules shiftable household appliances (dishwasher, laundry, EV charging) under real-time
+                pricing to minimise cost, scaled to a 30-household neighbourhood, and adds a peak-load penalty
+                that spreads demand across the day.
+              </p>
+              <p class="lang-no" style="display:none;">
+                Planlegger flyttbare husholdningsapparater (oppvaskmaskin, vask, elbillading) etter sanntidspris
+                for &aring; minimere kostnad, skalert til et nabolag med 30 husstander, og legger til en straff for
+                toppbelastning som sprer forbruket utover d&oslash;gnet.
+              </p>
+              <ul class="tags">
+                <li>Python</li><li data-tag="SciPy">SciPy (MILP)</li><li>NumPy</li><li>Matplotlib</li>
+              </ul>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <section id="education">
         <h3 class="lang-en">Education</h3>
         <h3 class="lang-no" style="display:none;">Utdanning</h3>
 
         <div class="item">
           <div class="role">
-            <h4 class="lang-en">Master's in Software Development and Systems Architecture</h4>
-            <h4 class="lang-no" style="display:none;">Master i programvareutvikling og systemarkitektur</h4>
-            <span class="meta lang-en">University of Oslo • 08/2025 – 06/2027</span>
-            <span class="meta lang-no" style="display:none;">Universitetet i Oslo • 08/2025 – 06/2027</span>
+            <h4 class="lang-en">Master&rsquo;s in Informatics: Programming and Systems Architecture</h4>
+            <h4 class="lang-no" style="display:none;">Master i informatikk: programmering og systemarkitektur</h4>
+            <span class="meta lang-en">University of Oslo &bull; 08/2025 &ndash; 06/2027</span>
+            <span class="meta lang-no" style="display:none;">Universitetet i Oslo &bull; 08/2025 &ndash; 06/2027</span>
           </div>
           <ul class="bullets lang-en">
-            <li>Thesis: <em>Malware detection in deep neural networks</em></li>
+            <li>Thesis: <em>Malware detection in deep neural networks</em>. Looks at how to detect malware hidden in the weights of neural networks.</li>
+            <li>Grade average in master&rsquo;s courses so far: B.</li>
           </ul>
           <ul class="bullets lang-no" style="display:none;">
-            <li>Masteroppgave: <em>Deteksjon av skadevare i dype nevrale nettverk</em></li>
+            <li>Masteroppgave: <em>Deteksjon av skadevare i dype nevrale nettverk</em>. Ser på hvordan man kan oppdage skadevare som er gjemt i vektene til nevrale nettverk.</li>
+            <li>Karaktersnitt på masteremner så langt: B.</li>
           </ul>
         </div>
 
@@ -199,94 +330,77 @@
           <div class="role">
             <h4 class="lang-en">Supplementary Courses in Informatics</h4>
             <h4 class="lang-no" style="display:none;">Supplerende emner i informatikk</h4>
-            <span class="meta lang-en">University of Oslo • 08/2024 – 06/2025</span>
-            <span class="meta lang-no" style="display:none;">Universitetet i Oslo • 08/2024 – 06/2025</span>
+            <span class="meta lang-en">University of Oslo &bull; 08/2024 &ndash; 06/2025</span>
+            <span class="meta lang-no" style="display:none;">Universitetet i Oslo &bull; 08/2024 &ndash; 06/2025</span>
           </div>
+          <ul class="bullets lang-en">
+            <li>Operating Systems (IN3000) and Algorithms: Design and Efficiency (IN3130), taken as preparation before master&rsquo;s admission.</li>
+          </ul>
+          <ul class="bullets lang-no" style="display:none;">
+            <li>Operativsystemer (IN3000) og Algoritmer: design og effektivitet (IN3130), tatt som påbygning før masteropptak.</li>
+          </ul>
         </div>
 
         <div class="item">
           <div class="role">
-            <h4 class="lang-en">Bachelor of Science, specialization in Computer Science</h4>
+            <h4 class="lang-en">Bachelor of Science, specialization in Informatics</h4>
             <h4 class="lang-no" style="display:none;">Bachelor i realfag, studieretning informatikk</h4>
-            <span class="meta lang-en">University of Oslo • 08/2020 – 06/2024</span>
-            <span class="meta lang-no" style="display:none;">Universitetet i Oslo • 08/2020 – 06/2024</span>
+            <span class="meta lang-en">University of Oslo &bull; 08/2020 &ndash; 06/2024</span>
+            <span class="meta lang-no" style="display:none;">Universitetet i Oslo &bull; 08/2020 &ndash; 06/2024</span>
           </div>
         </div>
       </section>
 
-      <section>
+      <section id="skills">
         <h3 class="lang-en">Skills</h3>
         <h3 class="lang-no" style="display:none;">Ferdigheter</h3>
+        <p class="hint lang-en">Highlighted skills link to the projects that use them.</p>
+        <p class="hint lang-no" style="display:none;">Uthevede ferdigheter viser prosjektene som bruker dem.</p>
 
-        <h4 class="lang-en">Programming Languages</h4>
-        <h4 class="lang-no" style="display:none;">Programmeringsspråk</h4>
+        <h4 class="lang-en">Programming</h4>
+        <h4 class="lang-no" style="display:none;">Programmering</h4>
         <ul class="taglist">
-          <li>C</li><li>Java</li><li>Python</li><li>x86 Assembly</li><li>Scheme (Lisp)</li>
+          <li>Java</li><li>Python</li><li>C</li><li>x86 Assembly</li><li>Scheme</li>
         </ul>
 
-        <h4 class="lang-en">Web Technologies</h4>
-        <h4 class="lang-no" style="display:none;">Web-teknologier</h4>
+        <h4 class="lang-en">Machine Learning &amp; Data</h4>
+        <h4 class="lang-no" style="display:none;">Maskinlæring og data</h4>
         <ul class="taglist">
-          <li>HTML</li><li>CSS</li><li>JavaScript</li><li>React</li>
+          <li>PyTorch</li><li>TensorFlow</li><li>scikit-learn</li><li>NumPy</li><li>pandas</li>
+        </ul>
+
+        <h4 class="lang-en">Web &amp; Frameworks</h4>
+        <h4 class="lang-no" style="display:none;">Web og rammeverk</h4>
+        <ul class="taglist">
+          <li>HTML</li><li>CSS</li><li>JavaScript</li><li>React</li><li>Javalin</li>
         </ul>
 
         <h4 class="lang-en">Databases</h4>
         <h4 class="lang-no" style="display:none;">Databaser</h4>
         <ul class="taglist">
-          <li>SQL</li><li>SPARQL</li>
+          <li>SQL</li><li>PostgreSQL</li><li>SPARQL</li>
         </ul>
 
-        <h4 class="lang-en">Tools & Systems</h4>
-        <h4 class="lang-no" style="display:none;">Verktøy og systemer</h4>
+        <h4 class="lang-en">AI Tools</h4>
+        <h4 class="lang-no" style="display:none;">KI-verktøy</h4>
         <ul class="taglist">
-          <li>Git</li><li>Docker</li><li>Linux</li>
+          <li>Claude</li><li>ChatGPT</li><li class="lang-en">Custom Claude Skills</li><li class="lang-no" style="display:none;">Egne Claude Skills</li><li class="lang-en">LLM API integration</li><li class="lang-no" style="display:none;">API-integrasjon mot LLM</li>
+        </ul>
+
+        <h4 class="lang-en">Tools</h4>
+        <h4 class="lang-no" style="display:none;">Verktøy</h4>
+        <ul class="taglist">
+          <li>Git</li><li>Docker</li><li>Linux</li><li>JUnit</li><li>Maven</li>
+        </ul>
+
+        <h4 class="lang-en">Methods</h4>
+        <h4 class="lang-no" style="display:none;">Metodikk</h4>
+        <ul class="taglist">
+          <li>Agile</li><li>Scrum</li><li>Kanban</li>
         </ul>
       </section>
 
-      <section>
-        <h3 class="lang-en">Projects</h3>
-        <h3 class="lang-no" style="display:none;">Prosjekter</h3>
-
-        <div class="item">
-          <div class="role">
-            <h4 class="lang-en">Operating System (IN3000)</h4>
-            <h4 class="lang-no" style="display:none;">Operativsystem (IN3000)</h4>
-            <span class="meta lang-en">University of Oslo • 01/2025 – 06/2025</span>
-            <span class="meta lang-no" style="display:none;">Universitetet i Oslo • 01/2025 – 06/2025</span>
-          </div>
-          <ul class="bullets lang-en">
-            <li>Built a minimal operating system in x86 assembly and C.</li>
-            <li>Implemented paging/memory management, process scheduling, and basic file handling.</li>
-            <li>Strengthened understanding of kernel-level architecture, debugging, and low-level performance tradeoffs.</li>
-          </ul>
-          <ul class="bullets lang-no" style="display:none;">
-            <li>Utviklet et minimalt operativsystem i x86-assembly og C.</li>
-            <li>Implementerte paging, minnehåndtering, prosessplanlegging og enkel filhåndtering.</li>
-            <li>Erfaring med lavnivå utvikling og feilsøking på lavt nivå.</li>
-          </ul>
-        </div>
-
-        <div class="item">
-          <div class="role">
-            <h4><a href="https://github.com/NicoSik/StockApp" class="lang-en">Mini Stock Broker</a></h4>
-            <h4><a href="https://github.com/NicoSik/StockApp" class="lang-no" style="display:none;">Mini aksjemegler</a></h4>
-            <span class="meta lang-en">Personal project</span>
-            <span class="meta lang-no" style="display:none;">Personlig prosjekt</span>
-          </div>
-          <ul class="bullets lang-en">
-            <li>Personal project to practice backend development and API integration using market data.</li>
-            <li>Fetches stock data via the Alpaca API (NASDAQ/NYSE) and refreshes data daily before market open.</li>
-            <li>Backend: Java, SQL • Frontend: HTML, JavaScript</li>
-          </ul>
-          <ul class="bullets lang-no" style="display:none;">
-            <li>Backend-prosjekt for å øve på API-integrasjon og databehandling.</li>
-            <li>Henter aksjedata via Alpaca-API og oppdaterer daglig før børsåpning.</li>
-            <li>Backend: Java, SQL • Frontend: HTML, JavaScript</li>
-          </ul>
-        </div>
-      </section>
-
-      <section>
+      <section id="languages">
         <h3 class="lang-en">Languages</h3>
         <h3 class="lang-no" style="display:none;">Språk</h3>
         <ul class="taglist">
@@ -300,6 +414,16 @@
       </section>
     </main>
   </div>
+
+  <dialog id="lightbox" class="lightbox" aria-label="Image viewer">
+    <button class="lb-close" aria-label="Close">&times;</button>
+    <button class="lb-nav lb-prev" aria-label="Previous image">&lsaquo;</button>
+    <figure>
+      <img alt="">
+      <figcaption></figcaption>
+    </figure>
+    <button class="lb-nav lb-next" aria-label="Next image">&rsaquo;</button>
+  </dialog>
 
   <script>
     let currentLang = 'en';
@@ -316,7 +440,7 @@
         langBtn.textContent = '🇬🇧 English';
         document.documentElement.lang = 'no';
         currentLang = 'no';
-        localStorage.setItem('cvLang', 'no');
+        try { localStorage.setItem('cvLang', 'no'); } catch (e) {}
       } else {
         // Switch to English
         enElements.forEach(el => el.style.display = '');
@@ -324,13 +448,218 @@
         langBtn.textContent = '🇳🇴 Norsk';
         document.documentElement.lang = 'en';
         currentLang = 'en';
-        localStorage.setItem('cvLang', 'en');
+        try { localStorage.setItem('cvLang', 'en'); } catch (e) {}
       }
+    }
+
+    // Project image galleries + lightbox
+    const lightbox = document.getElementById('lightbox');
+    const lbImg = lightbox.querySelector('img');
+    const lbCaption = lightbox.querySelector('figcaption');
+    let lbImages = [];
+    let lbIndex = 0;
+
+    function showLightboxImage(i) {
+      lbIndex = (i + lbImages.length) % lbImages.length;
+      const img = lbImages[lbIndex];
+      lbImg.src = img.currentSrc || img.src;
+      lbImg.alt = img.alt;
+      lbCaption.textContent = img.alt;
+      lightbox.classList.toggle('single', lbImages.length < 2);
+    }
+
+    document.querySelectorAll('[data-gallery]').forEach(media => {
+      const images = Array.from(media.querySelectorAll('img'));
+      const counter = media.querySelector('.media-count');
+      let current = 0;
+
+      images.forEach((img, i) => {
+        img.tabIndex = 0;
+        img.setAttribute('role', 'button');
+        img.classList.toggle('active', i === 0);
+        const open = () => {
+          lbImages = images;
+          showLightboxImage(i);
+          lightbox.showModal();
+        };
+        img.addEventListener('click', open);
+        img.addEventListener('keydown', e => {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
+        });
+      });
+
+      // Cycle the card preview when it holds more than one image
+      if (images.length > 1) {
+        const prev = document.createElement('button');
+        const next = document.createElement('button');
+        prev.className = 'media-nav media-prev';
+        next.className = 'media-nav media-next';
+        prev.setAttribute('aria-label', 'Previous image');
+        next.setAttribute('aria-label', 'Next image');
+        prev.innerHTML = '&lsaquo;';
+        next.innerHTML = '&rsaquo;';
+        const go = step => {
+          images[current].classList.remove('active');
+          current = (current + step + images.length) % images.length;
+          images[current].classList.add('active');
+          if (counter) counter.textContent = (current + 1) + ' / ' + images.length;
+        };
+        prev.addEventListener('click', () => go(-1));
+        next.addEventListener('click', () => go(1));
+        media.append(prev, next);
+      }
+    });
+
+    lightbox.querySelector('.lb-close').addEventListener('click', () => lightbox.close());
+    lightbox.querySelector('.lb-prev').addEventListener('click', () => showLightboxImage(lbIndex - 1));
+    lightbox.querySelector('.lb-next').addEventListener('click', () => showLightboxImage(lbIndex + 1));
+    lightbox.addEventListener('click', e => { if (e.target === lightbox) lightbox.close(); });
+    lightbox.addEventListener('keydown', e => {
+      if (lbImages.length < 2) return;
+      if (e.key === 'ArrowLeft') showLightboxImage(lbIndex - 1);
+      if (e.key === 'ArrowRight') showLightboxImage(lbIndex + 1);
+    });
+
+    // ---- Theme (light/dark), remembered per browser ----
+    const themeBtn = document.getElementById('themeBtn');
+    function applyTheme(theme) {
+      document.documentElement.dataset.theme = theme;
+      themeBtn.textContent = theme === 'dark' ? '☀️' : '🌙';
+    }
+    applyTheme(document.documentElement.dataset.theme || 'light');
+    themeBtn.addEventListener('click', () => {
+      const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+      applyTheme(next);
+      try { localStorage.setItem('cvTheme', next); } catch (e) {}
+    });
+
+    // ---- Copy email ----
+    document.querySelectorAll('.copy-btn').forEach(btn => {
+      btn.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(btn.dataset.copy);
+          btn.textContent = '✓';
+          btn.classList.add('copied');
+        } catch (e) {
+          btn.textContent = '✗';
+        }
+        setTimeout(() => { btn.textContent = '⧉'; btn.classList.remove('copied'); }, 1500);
+      });
+    });
+
+    // ---- Project filtering by technology ----
+    const projects = Array.from(document.querySelectorAll('.project'));
+    const filterBar = document.querySelector('.filter-bar');
+    const tagKey = li => li.dataset.tag || li.textContent.trim();
+    const projectTags = new Map();
+    projects.forEach(p => {
+      const keys = Array.from(p.querySelectorAll('.tags li')).map(tagKey);
+      p.dataset.tags = keys.join('|');
+      keys.forEach(k => projectTags.set(k, (projectTags.get(k) || 0) + 1));
+    });
+
+    // Only offer filters for technologies listed under Skills (or shared by several projects)
+    const skillNames = new Set(Array.from(document.querySelectorAll('#skills .taglist li'))
+      .map(li => li.textContent.trim()));
+    const filterKeys = [...projectTags.keys()].filter(k => skillNames.has(k) || projectTags.get(k) > 1);
+
+    let activeFilter = null;
+    function makeChip(label, key) {
+      const chip = document.createElement('button');
+      chip.className = 'chip';
+      chip.dataset.filter = key || '';
+      chip.innerHTML = label;
+      chip.addEventListener('click', () => setFilter(key === activeFilter ? null : key));
+      filterBar.appendChild(chip);
+    }
+    makeChip('<span class="lang-en">All</span><span class="lang-no" style="display:none;">Alle</span>', null);
+    // Most-used technologies first, then alphabetical
+    filterKeys
+      .sort((a, b) => projectTags.get(b) - projectTags.get(a) || a.localeCompare(b))
+      .forEach(key => {
+        const n = projectTags.get(key);
+        makeChip(n > 1 ? `${key} <small>${n}</small>` : key, key);
+      });
+    if (currentLang === 'no') {
+      filterBar.querySelectorAll('.lang-en').forEach(el => el.style.display = 'none');
+      filterBar.querySelectorAll('.lang-no').forEach(el => el.style.display = '');
+    }
+
+    function setFilter(key) {
+      activeFilter = key;
+      filterBar.querySelectorAll('.chip').forEach(c =>
+        c.classList.toggle('active', (c.dataset.filter || null) === key));
+      projects.forEach(p => {
+        const match = !key || p.dataset.tags.split('|').includes(key);
+        p.classList.toggle('filtered-out', !match);
+        p.querySelectorAll('.tags li').forEach(li =>
+          li.classList.toggle('active', key !== null && tagKey(li) === key));
+      });
+    }
+    setFilter(null);
+
+    // Tags inside a card act as filters too
+    projects.forEach(p => p.querySelectorAll('.tags li').forEach(li => {
+      if (!filterKeys.includes(tagKey(li))) return;
+      li.classList.add('filterable');
+      li.tabIndex = 0;
+      li.setAttribute('role', 'button');
+      const go = () => setFilter(tagKey(li) === activeFilter ? null : tagKey(li));
+      li.addEventListener('click', go);
+      li.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); }
+      });
+    }));
+
+    // Skills that appear in a project jump to the filtered project list
+    document.querySelectorAll('#skills .taglist li').forEach(li => {
+      const key = li.textContent.trim();
+      if (!filterKeys.includes(key)) return;
+      li.classList.add('linked');
+      li.tabIndex = 0;
+      li.setAttribute('role', 'link');
+      li.title = 'Show projects using ' + key;
+      const go = () => {
+        setFilter(key);
+        document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
+      };
+      li.addEventListener('click', go);
+      li.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); }
+      });
+    });
+
+    // ---- Highlight the current section in the top bar ----
+    const navLinks = Array.from(document.querySelectorAll('.nav-links a'));
+    const sectionObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        navLinks.forEach(a =>
+          a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id));
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    document.querySelectorAll('main section[id]').forEach(sec => sectionObserver.observe(sec));
+
+    // ---- Fade content in as it scrolls into view ----
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const revealObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { rootMargin: '0px 0px -40px 0px' });
+      document.querySelectorAll('.item, .project').forEach(el => {
+        el.classList.add('reveal');
+        revealObserver.observe(el);
+      });
     }
 
     // Load saved language preference
     window.addEventListener('DOMContentLoaded', () => {
-      const savedLang = localStorage.getItem('cvLang');
+      let savedLang = null;
+      try { savedLang = localStorage.getItem('cvLang'); } catch (e) {}
       if (savedLang === 'no') {
         toggleLanguage();
       }
