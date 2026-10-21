@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
+  <rect width="1200" height="750" fill="#0f1420"/>
+  <g stroke="#1c2436" stroke-width="1">
+    <path d="M0 75H1200M0 150H1200M0 225H1200M0 300H1200M0 375H1200M0 450H1200M0 525H1200M0 600H1200M0 675H1200"/>
+    <path d="M100 0V750M200 0V750M300 0V750M400 0V750M500 0V750M600 0V750M700 0V750M800 0V750M900 0V750M1000 0V750M1100 0V750"/>
+  </g>
+
+  <text x="80" y="90" font-size="26" fill="#7f8bb0">virtual address space</text>
+  <text x="760" y="90" font-size="26" fill="#7f8bb0">physical memory</text>
+
+  <!-- virtual pages -->
+  <g font-size="22" fill="#e6ebff">
+    <rect x="80" y="120" width="300" height="70" rx="8" fill="#26324d" stroke="#3a67e4" stroke-width="2"/>
+    <text x="100" y="164">0x0000 · code</text>
+    <rect x="80" y="205" width="300" height="70" rx="8" fill="#26324d" stroke="#3a67e4" stroke-width="2"/>
+    <text x="100" y="249">0x1000 · data</text>
+    <rect x="80" y="290" width="300" height="70" rx="8" fill="#1a2233" stroke="#33405e" stroke-width="2" stroke-dasharray="8 6"/>
+    <text x="100" y="334" fill="#7f8bb0">0x2000 · unmapped</text>
+    <rect x="80" y="375" width="300" height="70" rx="8" fill="#26324d" stroke="#3a67e4" stroke-width="2"/>
+    <text x="100" y="419">0x3000 · heap</text>
+    <rect x="80" y="460" width="300" height="70" rx="8" fill="#26324d" stroke="#3a67e4" stroke-width="2"/>
+    <text x="100" y="504">0xF000 · stack</text>
+  </g>
+
+  <!-- page table -->
+  <rect x="470" y="200" width="200" height="250" rx="10" fill="#141b2b" stroke="#5b6a90" stroke-width="2"/>
+  <text x="570" y="240" font-size="22" fill="#e6ebff" text-anchor="middle">page table</text>
+  <g font-size="18" fill="#9aa6c8">
+    <text x="490" y="285">PTE 0 → 5</text>
+    <text x="490" y="320">PTE 1 → 2</text>
+    <text x="490" y="355">PTE 2 · –</text>
+    <text x="490" y="390">PTE 3 → 7</text>
+    <text x="490" y="425">PTE F → 1</text>
+  </g>
+
+  <!-- physical frames -->
+  <g font-size="20" fill="#7f8bb0">
+    <rect x="760" y="120" width="360" height="52" rx="6" fill="#1a2233" stroke="#33405e"/><text x="780" y="154">frame 0 · kernel</text>
+    <rect x="760" y="180" width="360" height="52" rx="6" fill="#2b3d2a" stroke="#58b368"/><text x="780" y="214" fill="#d8f5dc">frame 1 · stack</text>
+    <rect x="760" y="240" width="360" height="52" rx="6" fill="#2b3d2a" stroke="#58b368"/><text x="780" y="274" fill="#d8f5dc">frame 2 · data</text>
+    <rect x="760" y="300" width="360" height="52" rx="6" fill="#1a2233" stroke="#33405e"/><text x="780" y="334">frame 3 · free</text>
+    <rect x="760" y="360" width="360" height="52" rx="6" fill="#1a2233" stroke="#33405e"/><text x="780" y="394">frame 4 · free</text>
+    <rect x="760" y="420" width="360" height="52" rx="6" fill="#2b3d2a" stroke="#58b368"/><text x="780" y="454" fill="#d8f5dc">frame 5 · code</text>
+    <rect x="760" y="480" width="360" height="52" rx="6" fill="#1a2233" stroke="#33405e"/><text x="780" y="514">frame 6 · free</text>
+    <rect x="760" y="540" width="360" height="52" rx="6" fill="#2b3d2a" stroke="#58b368"/><text x="780" y="574" fill="#d8f5dc">frame 7 · heap</text>
+  </g>
+
+  <!-- arrows -->
+  <g fill="none" stroke="#3a67e4" stroke-width="2.5" opacity="0.85">
+    <path d="M380 155 C430 155 430 280 470 280"/>
+    <path d="M380 240 C430 240 430 315 470 315"/>
+    <path d="M380 410 C430 410 430 385 470 385"/>
+    <path d="M380 495 C430 495 430 420 470 420"/>
+    <path d="M670 280 C720 280 710 446 760 446"/>
+    <path d="M670 315 C720 315 710 266 760 266"/>
+    <path d="M670 385 C720 385 710 566 760 566"/>
+    <path d="M670 420 C720 420 710 206 760 206"/>
+  </g>
+
+  <text x="80" y="660" font-size="40" font-weight="700" fill="#e6ebff" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif">Minimal OS · x86 assembly &amp; C</text>
+  <text x="80" y="705" font-size="24" fill="#7f8bb0" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif">paging · scheduling · file handling</text>
+</svg>
