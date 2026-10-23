@@ -1,78 +1,44 @@
-# CV Page
+# CV page
 
-A professional, responsive, bilingual CV/Resume page for Nicolai Sikora hosted on GitHub Pages.
+Nicolai Sikora's CV, in English and Norwegian, published with GitHub Pages at
+https://nicosik.github.io/CV_page/.
 
-## 🌐 View Live
+It is a single static page: `index.html`, `style.css` and the images in `images/`. There is no
+build step.
 
-Visit the CV at: https://nicosik.github.io/CV_page/
+## Design
 
-## 🌍 Bilingual Support
+The page is typeset like the PDF version of the CV: a serif text face (Source Serif 4), ruled
+section headings, and a rectangular portrait. IBM Plex Mono is used only for small labels such as
+dates, section numbers and figure captions. There is one accent colour.
 
-This CV supports both English and Norwegian languages with a simple toggle button:
-- Click the language button in the top-right corner to switch between languages
-- The selected language preference is saved automatically in your browser
-- All content (work experience, education, skills, projects) is fully translated
+- A numbered contents list sits in the left margin on wide screens and marks the section you are
+  reading.
+- Each project has a figure with a numbered caption. Click an image to open it larger, then use
+  the arrow keys to move between figures and Esc to close.
+- Projects can be filtered by programming language. A skill that a project uses is underlined in
+  the Skills list, and clicking it shows those projects.
+- Language (EN/NO) and theme (light/dark) are switched in the top right. Both choices are kept in
+  the browser. The theme follows the system setting until you pick one.
+- Printing gives a plain version without images or controls.
 
-## 📝 Content
+## Editing
 
-This CV includes:
-- **Personal Information**: Contact details and professional title
-- **Professional Summary**: Brief overview of expertise and focus areas
-- **Work Experience**: Teaching assistant roles, grading positions, and professional work
-- **Education**: Master's and Bachelor's degrees from the University of Oslo
-- **Skills**: Programming languages, web technologies, databases, and tools
-- **Projects**: Project cards with screenshots/cover images, a per-card image carousel and a click-to-enlarge lightbox
-- **Languages**: Norwegian, English, and Polish proficiency
+Every piece of text exists twice, marked `data-l="en"` and `data-l="nb"`. Only the active
+language is shown. Edit both when you change something.
 
-## 🎨 Customization
+- **A project:** copy an `<article class="project">` block. List the technologies in its
+  `data-tags` attribute, separated by `|`. A tag that matches a skill name connects the two.
+- **Project images:** put them in `images/projects/` and reference them from the project's
+  `<figure>`. The `alt` text is the caption in the enlarged view. Two images in one figure are
+  shown as a pair.
+- **Portrait:** `images/portrait.jpg` (4:5) is shown on the page. `CV_picture.jpg` is used for link
+  previews.
+- **Colours and fonts:** the variables at the top of `style.css`, with a `[data-theme="dark"]`
+  block for the dark theme.
 
-To update the CV content:
+## Image credits
 
-1. Edit `index.html` and modify both the English (`.lang-en`) and Norwegian (`.lang-no`) sections
-2. (Optional) Modify `style.css` to change colors, fonts, or layout
-3. Profile picture: `images/profile.jpg` (square, shown on the page) and `CV_picture.jpg` (used for link previews)
-4. Project images live in `images/projects/`. To add or replace one, drop the file there and add an `<img>` inside
-   the project's `.project-media` block in `index.html`. Several `<img>` tags in one block become a carousel
-   automatically; add `<span class="media-count">1 / N</span>` to show a counter. The `alt` text is used as the
-   caption in the enlarged view.
-
-## 🚀 GitHub Pages Setup
-
-This repository is configured to use GitHub Pages. To enable it:
-
-1. Go to your repository settings
-2. Navigate to "Pages" in the left sidebar
-3. Under "Source", select the branch (usually `main` or `master`)
-4. Click "Save"
-
-The CV is published at https://nicosik.github.io/CV_page/ within a few minutes.
-
-## 📱 Features
-
-- **Bilingual**: Toggle between English and Norwegian with one click
-- **Sticky navigation**: Section links in the top bar, highlighting the section you are reading
-- **Dark mode**: Theme toggle that follows the system setting by default and remembers your choice
-- **Project filters**: Filter projects by technology; skills used in a project link straight to it
-- **Image gallery**: Per-project carousel and a click-to-enlarge lightbox (arrow keys / Esc)
-- **Copy email**: One-click copy button next to the email address
-- **Language Persistence**: Remembers your language preference
-- **Responsive Design**: Works perfectly on desktop, tablet, and mobile devices
-- **Print-Friendly**: Optimized CSS for printing (profile picture hidden in print)
-- **Professional Layout**: Clean, modern design with accent colors
-- **Easy to Update**: Simple HTML structure with clear language sections
-- **SEO Friendly**: Proper meta tags and semantic HTML
-
-## 🎨 Color Scheme
-
-The color scheme uses:
-- Primary text: #111 (Near black)
-- Accent: #3a67e4 (Blue)
-- Muted text: #444 (Dark gray)
-- Border: #ddd (Light gray)
-- Background: #fff (White)
-
-Feel free to change these in the `style.css` file by modifying the CSS variables in `:root`.
-
-## 📄 License
-
-This CV template is free to use for personal purposes.
+`images/projects/warden.jpg` is the logo of [Warden](https://github.com/BlastBlastBlast/Warden_public)
+by Lars Wien Tynes, MIT licence. The other project images are screenshots from the projects or
+sketches made for this page. Their captions say which is which.

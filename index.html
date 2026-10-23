@@ -4,13 +4,13 @@
   <meta charset="utf-8">
   <title>Nicolai Sikora - CV | Informatics Student</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+
   <!-- SEO Meta Tags -->
   <meta name="description" content="Nicolai Sikora - MSc Informatics student at the University of Oslo (Programming and Systems Architecture), writing a thesis on malware detection in deep neural networks. Java, Python, C, PyTorch.">
   <meta name="keywords" content="Nicolai Sikora, Informatics, University of Oslo, programmer, systems architecture, software development, machine learning, IT security, malware detection, C, Java, Python, PyTorch, Linux, Docker, Git, operating systems">
   <meta name="author" content="Nicolai Sikora">
   <link rel="canonical" href="https://nicosik.github.io/CV_page/">
-  
+
   <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="Nicolai Sikora - CV">
   <meta property="og:description" content="MSc Informatics student at the University of Oslo (Programming and Systems Architecture), writing a thesis on malware detection in deep neural networks. Java, Python, C, PyTorch.">
@@ -18,12 +18,12 @@
   <meta property="og:url" content="https://nicosik.github.io/CV_page/">
   <meta property="og:image" content="https://nicosik.github.io/CV_page/CV_picture.jpg">
   <meta property="og:image:alt" content="Portrait of Nicolai Sikora">
-  
+
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Nicolai Sikora - CV">
   <meta name="twitter:description" content="MSc Informatics student at the University of Oslo (Programming and Systems Architecture), writing a thesis on malware detection in deep neural networks. Java, Python, C, PyTorch.">
-  
+
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
   {
@@ -35,8 +35,7 @@
       "@type": "Organization",
       "name": "University of Oslo"
     },
-    "email": "nicolai.sikora1@gmail.com",
-    "telephone": "+47 401 67 250",
+    "email": "sikora.nicolai1@gmail.com",
     "url": "https://nicosik.github.io/CV_page/",
     "description": "MSc student in Informatics: Programming and Systems Architecture at the University of Oslo, writing a thesis on malware detection in deep neural networks. Teaching assistant and grader. Java, Python, C, PyTorch, PostgreSQL, Docker.",
     "image": "https://nicosik.github.io/CV_page/CV_picture.jpg",
@@ -46,624 +45,593 @@
     ]
   }
   </script>
-  
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap">
   <link rel="stylesheet" href="style.css">
   <script>
-    // Set the theme before first paint to avoid a light/dark flash
+    // Apply saved language and theme before first paint
     (function () {
-      var t = null;
-      try { t = localStorage.getItem('cvTheme'); } catch (e) {}
-      if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      document.documentElement.dataset.theme = t;
+      var root = document.documentElement, lang = null, theme = null;
+      try { lang = localStorage.getItem('cvLang'); theme = localStorage.getItem('cvTheme'); } catch (e) {}
+      if (lang === 'no') root.lang = 'nb';
+      root.dataset.theme = theme || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
     })();
   </script>
 </head>
 
 <body>
-  <!-- Sticky top bar: section navigation, theme and language toggles -->
-  <nav class="topbar" aria-label="Sections">
-    <div class="topbar-inner">
-      <ul class="nav-links">
-        <li><a href="#experience"><span class="lang-en">Experience</span><span class="lang-no" style="display:none;">Erfaring</span></a></li>
-        <li><a href="#projects"><span class="lang-en">Projects</span><span class="lang-no" style="display:none;">Prosjekter</span></a></li>
-        <li><a href="#education"><span class="lang-en">Education</span><span class="lang-no" style="display:none;">Utdanning</span></a></li>
-        <li><a href="#skills"><span class="lang-en">Skills</span><span class="lang-no" style="display:none;">Ferdigheter</span></a></li>
-        <li><a href="#languages"><span class="lang-en">Languages</span><span class="lang-no" style="display:none;">Språk</span></a></li>
-      </ul>
-      <div class="topbar-actions">
-        <button id="themeBtn" class="icon-btn" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
-        <button id="langBtn" class="lang-btn" onclick="toggleLanguage()">🇳🇴 Norsk</button>
-      </div>
-    </div>
+  <div class="controls" aria-label="Display settings">
+    <span class="switch" role="group" aria-label="Language">
+      <button data-set-lang="en" aria-label="English">EN</button><span aria-hidden="true">/</span><button data-set-lang="nb" aria-label="Norsk">NO</button>
+    </span>
+    <button id="themeBtn" class="switch">
+      <span data-when-theme="light"><span data-l="en">dark</span><span data-l="nb">mørk</span></span>
+      <span data-when-theme="dark"><span data-l="en">light</span><span data-l="nb">lys</span></span>
+    </button>
+  </div>
+
+  <nav class="toc" aria-label="Contents">
+    <ol>
+      <li><a href="#about"><span class="toc-n">00</span><span data-l="en">About</span><span data-l="nb">Om meg</span></a></li>
+      <li><a href="#projects"><span class="toc-n">01</span><span data-l="en">Projects</span><span data-l="nb">Prosjekter</span></a></li>
+      <li><a href="#experience"><span class="toc-n">02</span><span data-l="en">Experience</span><span data-l="nb">Erfaring</span></a></li>
+      <li><a href="#education"><span class="toc-n">03</span><span data-l="en">Education</span><span data-l="nb">Utdanning</span></a></li>
+      <li><a href="#skills"><span class="toc-n">04</span><span data-l="en">Skills</span><span data-l="nb">Ferdigheter</span></a></li>
+    </ol>
   </nav>
 
   <div class="page">
 
-    <header class="cv-header">
-      <div class="title-block">
+    <header class="masthead" id="about">
+      <div class="masthead-text">
         <h1>Nicolai Sikora</h1>
-        <h2 class="lang-en">Informatics student • Programming & Systems Architecture</h2>
-        <h2 class="lang-no" style="display:none;">Informatikkstudent • Programmering og systemarkitektur</h2>
-
-        <ul class="contact-row">
-          <li>
-            <a href="mailto:nicolai.sikora1@gmail.com">nicolai.sikora1@gmail.com</a>
-            <button class="copy-btn" data-copy="nicolai.sikora1@gmail.com" aria-label="Copy email address" title="Copy email address">⧉</button>
-          </li>
-          <li>+47 401 67 250</li>
+        <p class="subtitle">
+          <span data-l="en">MSc student in Informatics: Programming and Systems Architecture, University of Oslo</span>
+          <span data-l="nb">Masterstudent i informatikk: programmering og systemarkitektur, Universitetet i Oslo</span>
+        </p>
+        <ul class="contact">
+          <li><a href="mailto:sikora.nicolai1@gmail.com">sikora.nicolai1@gmail.com</a></li>
           <li><a href="https://github.com/NicoSik">github.com/NicoSik</a></li>
           <li><a href="https://www.linkedin.com/in/nicolai-sikora-620843251/">linkedin.com/in/nicolai-sikora</a></li>
+          <li>Oslo</li>
+          <li>
+            <span data-l="en">Norwegian (native), English, Polish (fluent)</span>
+            <span data-l="nb">Norsk (morsmål), engelsk, polsk (flytende)</span>
+          </li>
         </ul>
       </div>
-
-      <img src="images/profile.jpg" width="600" height="600" alt="Portrait of Nicolai Sikora" class="profile-pic">
+      <img src="images/portrait.jpg" width="480" height="600" alt="Portrait of Nicolai Sikora" class="portrait">
     </header>
 
-    <p class="profile lang-en">
-      Fifth-year student in the master&rsquo;s programme Informatics: Programming and Systems Architecture at the
-      University of Oslo, finishing in summer 2027. My thesis is about detecting malware hidden in deep neural
-      networks, at the intersection of machine learning and IT security. I have worked as a teaching assistant
-      in several informatics courses. Before university I served in His Majesty The King&rsquo;s Guard, where I
-      received <em>Excellent</em> on all four points of my service evaluation.
-    </p>
-    <p class="profile lang-no" style="display:none;">
-      Jeg går femte året på masteren i Informatikk: Programmering og systemarkitektur ved UiO, og blir ferdig
-      sommeren 2027. Masteroppgaven handler om å oppdage skadevare gjemt i dype nevrale nettverk, og ligger i
-      skjæringen mellom maskinlæring og IT-sikkerhet. Gjennom årene som student har jeg bistått som gruppelærer
-      i en rekke informatikkemner. Før studentlivet var jeg i førstegangstjenesten i Kongens Garde, hvor jeg
-      mottok <em>Utmerket</em> på alle fire punkter i tjenesteuttalelsen.
-    </p>
-
-    <hr class="header-divider">
+    <div class="summary">
+      <p data-l="en">
+        I&rsquo;m in the fifth year of the master&rsquo;s programme Informatics: Programming and Systems Architecture
+        at the University of Oslo, finishing in summer 2027. My thesis is about detecting malware hidden in deep
+        neural networks, where machine learning meets IT security. I have worked as a teaching assistant in several
+        informatics courses. Before university I served in His Majesty The King&rsquo;s Guard, where I received
+        <em>Excellent</em> on all four points of my service evaluation.
+      </p>
+      <p data-l="nb">
+        Jeg går femte året på masteren i Informatikk: programmering og systemarkitektur ved UiO, og blir ferdig
+        sommeren 2027. Masteroppgaven handler om å oppdage skadevare gjemt i dype nevrale nettverk, og ligger i
+        skjæringen mellom maskinlæring og IT-sikkerhet. Gjennom årene som student har jeg bistått som gruppelærer
+        i en rekke informatikkemner. Før studentlivet var jeg i førstegangstjenesten i Kongens Garde, hvor jeg
+        mottok <em>Utmerket</em> på alle fire punkter i tjenesteuttalelsen.
+      </p>
+    </div>
 
     <main>
-      <section id="experience">
-        <h3 class="lang-en">Work Experience</h3>
-        <h3 class="lang-no" style="display:none;">Arbeidserfaring</h3>
 
-        <div class="item">
-          <div class="role">
-            <h4 class="lang-en">Teaching Assistant &amp; Grader</h4>
-            <h4 class="lang-no" style="display:none;">Gruppelærer og retter</h4>
-            <span class="meta lang-en">Department of Informatics, University of Oslo &bull; 08/2023 &ndash; Present</span>
-            <span class="meta lang-no" style="display:none;">Institutt for informatikk, Universitetet i Oslo &bull; 08/2023 &ndash; Nåværende</span>
+      <!-- ============ Projects ============ -->
+      <section id="projects">
+        <h2><span class="sec-n">01</span><span data-l="en">Projects</span><span data-l="nb">Prosjekter</span></h2>
+
+        <p class="filter" role="group" aria-label="Filter projects by technology">
+          <span class="filter-label"><span data-l="en">Filter</span><span data-l="nb">Filtrer</span></span>
+        </p>
+
+        <article class="project" data-tags="Java|Javalin|PostgreSQL|Alpaca API|JUnit|Maven|JavaScript">
+          <div class="project-text">
+            <header class="entry-head">
+              <h3><a href="https://github.com/NicoSik/StockApp">Ticker</a></h3>
+              <span class="when">2025&ndash;<span data-l="en">now</span><span data-l="nb">nå</span></span>
+            </header>
+            <p class="org">
+              <span data-l="en">Personal project &middot; multi-broker portfolio aggregator</span>
+              <span data-l="nb">Personlig prosjekt &middot; porteføljeaggregator for flere meglere</span>
+            </p>
+            <ul data-l="en">
+              <li>Combines holdings from eToro, Nordnet and DNB into one NOK portfolio with live prices from the Alpaca API. Every import is stored separately, so earlier data is never overwritten.</li>
+              <li>Wrote my own parsers for two undocumented export formats (CSV and Excel), tested against real export files.</li>
+              <li>Matches securities on the price stated in the export rather than on name, and reconciles every import against the file&rsquo;s total to catch mismatches and partial reads.</li>
+            </ul>
+            <ul data-l="nb">
+              <li>Samler beholdninger fra eToro, Nordnet og DNB i én portefølje i NOK, med live priser fra Alpaca API. Hver import lagres for seg, så tidligere data aldri overskrives.</li>
+              <li>Skrev egne parsere for to udokumenterte eksportformater (CSV og Excel), testet mot ekte eksportfiler.</li>
+              <li>Matcher verdipapirer på prisen eksporten selv oppgir i stedet for på navn, og avstemmer hver import mot filens totalbeløp for å fange opp feilmatch og delvis innlesning.</li>
+            </ul>
+            <p class="stack">Java, Javalin, PostgreSQL, Alpaca API, JUnit, Maven, JavaScript</p>
           </div>
-          <ul class="bullets lang-en">
-            <li><em>Teaching Assistant, Project in Programming (IN2031), Aug 2026 &ndash; present:</em> lead weekly group sessions, help students through their project work and grade their assignments.</li>
-            <li><em>Teaching Assistant, Operating Systems (IN3000/IN4000), spring 2026:</em> led weekly lab sessions, guided students through operating system concepts and graded their assignments.</li>
+          <figure class="figure figure-pair">
+            <div class="figure-images">
+              <img src="images/projects/ticker-ticker.jpg" width="1400" height="1180" loading="lazy"
+                   alt="Ticker: watchlist and stock detail view with a live price chart">
+              <img src="images/projects/ticker-holdings.jpg" width="1400" height="1180" loading="lazy"
+                   alt="Ticker: holdings view combining several brokers into one NOK total (invented holdings)">
+            </div>
+            <figcaption>
+              <span class="fig-n">Fig. 1</span>
+              <span data-l="en">Watchlist and holdings views. Holdings are invented; market prices are real.</span>
+              <span data-l="nb">Watchliste og beholdningsvisning. Beholdningene er oppdiktet, markedsprisene er ekte.</span>
+            </figcaption>
+          </figure>
+        </article>
+
+        <article class="project" data-tags="Python|Bash|Claude Code">
+          <div class="project-text">
+            <header class="entry-head">
+              <h3><a href="https://github.com/NicoSik/Warden_public">Warden</a> <span class="aside">(fork)</span></h3>
+              <span class="when">10/2026&ndash;<span data-l="en">now</span><span data-l="nb">nå</span></span>
+            </header>
+            <p class="org">
+              <span data-l="en">Open-source Claude Code setup &middot; contributions to a fork</span>
+              <span data-l="nb">Åpen kildekode-oppsett for Claude Code &middot; bidrag i en fork</span>
+            </p>
+            <ul data-l="en">
+              <li>Warden packages a full Claude Code setup (instructions, hooks, skills, plugins) behind one installer. I forked it and extended it.</li>
+              <li>Added a &ldquo;Code Map&rdquo; rule that makes the agent query a code graph (Graphify) before it searches or reads files, and moved it into its own Warden plugin so the vendored upstream stays clean.</li>
+              <li>Built a rerunnable behaviour test on <code>claude plugin eval</code>: each change is run against a baseline commit, and graders score what the agent actually did, not what it said.</li>
+            </ul>
+            <ul data-l="nb">
+              <li>Warden pakker et komplett Claude Code-oppsett (instruksjoner, hooks, skills, plugins) bak én installasjon. Jeg forket det og bygget videre.</li>
+              <li>La til en «Code Map»-regel som får agenten til å spørre en kodegraf (Graphify) før den søker i eller leser filer, og flyttet den til en egen Warden-plugin så den vendorede upstream-koden holdes ren.</li>
+              <li>Bygget en behaviour-test som kan kjøres på nytt, på <code>claude plugin eval</code>: hver endring kjøres mot en baseline-commit, og graderne vurderer hva agenten faktisk gjorde, ikke hva den sa.</li>
+            </ul>
+            <p class="stack">Python, Bash, Claude Code plugins &amp; evals, GitHub</p>
+          </div>
+          <figure class="figure">
+            <div class="figure-images">
+              <img src="images/projects/warden.jpg" width="900" height="674" loading="lazy"
+                   alt="Warden logo: a knight in plate armour and a great helm, black and bone white on red">
+            </div>
+            <figcaption>
+              <span class="fig-n">Fig. 2</span>
+              <span data-l="en">The Warden logo, from the original project.</span>
+              <span data-l="nb">Warden-logoen, fra det opprinnelige prosjektet.</span>
+            </figcaption>
+          </figure>
+        </article>
+
+        <article class="project" data-tags="TypeScript|React|GraphQL">
+          <div class="project-text">
+            <header class="entry-head">
+              <h3>TrendyWay</h3>
+              <span class="when">2026&ndash;<span data-l="en">now</span><span data-l="nb">nå</span></span>
+            </header>
+            <p class="org">
+              <span data-l="en">Online store for my younger brother&rsquo;s resale shop &middot; not live yet</span>
+              <span data-l="nb">Nettbutikk for lillebroren min sin bruktbutikk &middot; ikke lansert ennå</span>
+            </p>
+            <ul data-l="en">
+              <li>Headless Shopify storefront in TypeScript on Hydrogen (React Router), with server-side rendering and deploys to Shopify Oxygen.</li>
+              <li>Product data comes from the Storefront API over GraphQL, with types generated from the queries. CI runs type checks and lint before it deploys.</li>
+              <li>Built the design system from a Figma brand board: every colour and type size lives as a token in one theme file.</li>
+            </ul>
+            <ul data-l="nb">
+              <li>Headless Shopify-nettbutikk i TypeScript på Hydrogen (React Router), med serverrendering og publisering til Shopify Oxygen.</li>
+              <li>Produktdata hentes fra Storefront API over GraphQL, med typer generert fra spørringene. CI kjører typesjekk og lint før publisering.</li>
+              <li>Bygget designsystemet fra et brand board i Figma: alle farger og tekststørrelser ligger som tokens i én temafil.</li>
+            </ul>
+            <p class="stack">TypeScript, React, Shopify Hydrogen, GraphQL, Tailwind CSS</p>
+          </div>
+          <figure class="figure">
+            <div class="figure-images">
+              <img src="images/projects/trendyway.svg" width="1200" height="750" loading="lazy"
+                   alt="Sketch of the TrendyWay storefront layout in its bone, black and oxblood palette">
+            </div>
+            <figcaption>
+              <span class="fig-n">Fig. 3</span>
+              <span data-l="en">Layout sketch in the store&rsquo;s palette, not a screenshot.</span>
+              <span data-l="nb">Skisse av oppsettet i butikkens fargepalett, ikke et skjermbilde.</span>
+            </figcaption>
+          </figure>
+        </article>
+
+        <article class="project" data-tags="C|x86 Assembly">
+          <div class="project-text">
+            <header class="entry-head">
+              <h3><span data-l="en">Operating System</span><span data-l="nb">Operativsystem</span> (IN3000)</h3>
+              <span class="when">01&ndash;06/2025</span>
+            </header>
+            <p class="org">
+              <span data-l="en">Course project &middot; University of Oslo</span>
+              <span data-l="nb">Emneprosjekt &middot; Universitetet i Oslo</span>
+            </p>
+            <ul data-l="en">
+              <li>Wrote a minimal operating system in x86 assembly and C, with paging, memory management, process scheduling and basic file handling.</li>
+              <li>I later taught the course as a teaching assistant.</li>
+            </ul>
+            <ul data-l="nb">
+              <li>Skrev et minimalt operativsystem i x86-assembly og C, med paging, minnehåndtering, prosessplanlegging og enkel filhåndtering.</li>
+              <li>Jeg var senere gruppelærer i emnet.</li>
+            </ul>
+            <p class="stack">x86 Assembly, C, GitHub</p>
+          </div>
+          <figure class="figure">
+            <div class="figure-images">
+              <img src="images/projects/os.svg" width="1200" height="750" loading="lazy"
+                   alt="Diagram: virtual pages mapped to physical frames through a page table">
+            </div>
+            <figcaption>
+              <span class="fig-n">Fig. 4</span>
+              <span data-l="en">Diagram of virtual-to-physical page mapping.</span>
+              <span data-l="nb">Diagram av mapping fra virtuelle sider til fysiske rammer.</span>
+            </figcaption>
+          </figure>
+        </article>
+
+        <article class="project" data-tags="React|JavaScript|DHIS2|Scrum">
+          <div class="project-text">
+            <header class="entry-head">
+              <h3><a href="https://github.com/NicoSik/Chalmers"><span data-l="en">DHIS2 app for school inspections</span><span data-l="nb">DHIS2-app for skoleinspeksjoner</span></a> (IN5320)</h3>
+              <span class="when">08&ndash;11/2025</span>
+            </header>
+            <p class="org">
+              <span data-l="en">Team project &middot; University of Oslo &middot; Scrum master</span>
+              <span data-l="nb">Gruppeprosjekt &middot; Universitetet i Oslo &middot; Scrum master</span>
+            </p>
+            <ul data-l="en">
+              <li>Prototype for registering school inspections in the Gambia, built on the DHIS2 platform. I was Scrum master for the group.</li>
+              <li>Adapted to how inspectors work in the field: data collection, visualisation, and offline support for places with an unstable connection.</li>
+            </ul>
+            <ul data-l="nb">
+              <li>Prototype for registrering av skoleinspeksjoner i Gambia, bygget på DHIS2-plattformen. Jeg var Scrum master for gruppen.</li>
+              <li>Tilpasset hvordan inspektørene jobber i felt, med datainnsamling, visualisering og offlinestøtte for steder med ustabilt nett.</li>
+            </ul>
+            <p class="stack">React, JavaScript, HTML, CSS, DHIS2, GitHub, Scrum</p>
+          </div>
+          <figure class="figure">
+            <div class="figure-images">
+              <img src="images/projects/chalmers.svg" width="1200" height="750" loading="lazy"
+                   alt="Logo of the Inspector Chalmers app">
+            </div>
+            <figcaption>
+              <span class="fig-n">Fig. 5</span>
+              <span data-l="en">The app, &ldquo;Inspector Chalmers&rdquo;.</span>
+              <span data-l="nb">Appen, &laquo;Inspector Chalmers&raquo;.</span>
+            </figcaption>
+          </figure>
+        </article>
+
+        <article class="project" data-tags="Python|NumPy">
+          <div class="project-text">
+            <header class="entry-head">
+              <h3><a href="https://github.com/NicoSik/IN5410"><span data-l="en">Energy optimisation</span><span data-l="nb">Energioptimalisering</span></a> (IN5410)</h3>
+              <span class="when">2026</span>
+            </header>
+            <p class="org">
+              <span data-l="en">Course project &middot; University of Oslo</span>
+              <span data-l="nb">Emneprosjekt &middot; Universitetet i Oslo</span>
+            </p>
+            <ul data-l="en">
+              <li>Schedules shiftable household appliances (dishwasher, laundry, EV charging) under real-time pricing to minimise cost, then scales to a neighbourhood of 30 households.</li>
+              <li>Adds a peak-load penalty to the optimisation, which spreads demand across the day.</li>
+            </ul>
+            <ul data-l="nb">
+              <li>Planlegger flyttbare husholdningsapparater (oppvaskmaskin, vask, elbillading) etter sanntidspris for å minimere kostnad, og skalerer til et nabolag med 30 husstander.</li>
+              <li>Legger til en straff for toppbelastning i optimeringen, som sprer forbruket utover døgnet.</li>
+            </ul>
+            <p class="stack">Python, SciPy (MILP), NumPy, Matplotlib</p>
+          </div>
+          <figure class="figure">
+            <div class="figure-images">
+              <img src="images/projects/energy.svg" width="1200" height="750" loading="lazy"
+                   alt="Sketch: household load curve, cost-only versus cost plus peak penalty">
+            </div>
+            <figcaption>
+              <span class="fig-n">Fig. 6</span>
+              <span data-l="en">Sketch of the idea, not actual results.</span>
+              <span data-l="nb">Skisse av idéen, ikke faktiske resultater.</span>
+            </figcaption>
+          </figure>
+        </article>
+
+        <p class="filter-empty" hidden>
+          <span data-l="en">No projects use that yet.</span>
+          <span data-l="nb">Ingen prosjekter bruker det ennå.</span>
+        </p>
+      </section>
+
+      <!-- ============ Experience ============ -->
+      <section id="experience">
+        <h2><span class="sec-n">02</span><span data-l="en">Experience</span><span data-l="nb">Arbeidserfaring</span></h2>
+
+        <article class="entry">
+          <header class="entry-head">
+            <h3><span data-l="en">Teaching Assistant &amp; Grader</span><span data-l="nb">Gruppelærer og retter</span></h3>
+            <span class="when">08/2023&ndash;<span data-l="en">now</span><span data-l="nb">nå</span></span>
+          </header>
+          <p class="org">
+            <span data-l="en">Department of Informatics, University of Oslo</span>
+            <span data-l="nb">Institutt for informatikk, Universitetet i Oslo</span>
+          </p>
+          <ul data-l="en">
+            <li><em>Project in Programming (IN2031), Aug 2026&ndash;now:</em> lead weekly group sessions, help students through their project work and grade their assignments.</li>
+            <li><em>Operating Systems (IN3000/IN4000), spring 2026:</em> led weekly lab sessions, guided students through operating system concepts and graded their assignments.</li>
             <li><em>Grader, Project in Programming (IN2030 and IN2031), 2023 and 2025:</em> graded mandatory assignments and gave written feedback.</li>
-            <li>Completed the Faculty of Mathematics and Natural Sciences&rsquo; Learning Assistant course (KURT) in teaching and supervision, spring 2026.</li>
+            <li>Completed the faculty&rsquo;s Learning Assistant course (KURT) in teaching and supervision, spring 2026.</li>
           </ul>
-          <ul class="bullets lang-no" style="display:none;">
-            <li><em>Gruppelærer, Prosjekt i programmering (IN2031), aug 2026 &ndash; nå:</em> leder ukentlige gruppetimer, hjelper studentene gjennom prosjektarbeidet og retter innleveringene deres.</li>
-            <li><em>Gruppelærer, Operativsystemer (IN3000/IN4000), vår 2026:</em> ledet ukentlige labtimer, veiledet studenter i operativsystemkonsepter og rettet innleveringene deres.</li>
+          <ul data-l="nb">
+            <li><em>Prosjekt i programmering (IN2031), aug 2026&ndash;nå:</em> leder ukentlige gruppetimer, hjelper studentene gjennom prosjektarbeidet og retter innleveringene deres.</li>
+            <li><em>Operativsystemer (IN3000/IN4000), vår 2026:</em> ledet ukentlige labtimer, veiledet studenter i operativsystemkonsepter og rettet innleveringene deres.</li>
             <li><em>Retter, Prosjekt i programmering (IN2030 og IN2031), 2023 og 2025:</em> rettet obligatoriske oppgaver og ga skriftlige tilbakemeldinger til kull.</li>
             <li>Tok MN-fakultetets Learning Assistant-kurs (KURT) i pedagogikk og veiledning, vår 2026.</li>
           </ul>
-        </div>
+        </article>
 
-        <div class="item">
-          <div class="role">
-            <h4 class="lang-en">Keyholder &amp; Health and Safety Representative</h4>
-            <h4 class="lang-no" style="display:none;">Låseansvarlig og verneombud</h4>
-            <span class="meta lang-en">Kiwi Minipris, Oslo &bull; 04/2024 &ndash; Present</span>
-            <span class="meta lang-no" style="display:none;">Kiwi Minipris, Oslo &bull; 04/2024 &ndash; Nåværende</span>
-          </div>
-          <ul class="bullets lang-en">
+        <article class="entry">
+          <header class="entry-head">
+            <h3><span data-l="en">Keyholder &amp; Safety Representative</span><span data-l="nb">Låseansvarlig og verneombud</span></h3>
+            <span class="when">04/2024&ndash;<span data-l="en">now</span><span data-l="nb">nå</span></span>
+          </header>
+          <p class="org">Kiwi Minipris, Oslo</p>
+          <ul data-l="en">
             <li>Responsible for opening, closing and cash handling.</li>
             <li>Elected health and safety representative: follow up HSE requirements and risk assessments, and raise issues with management.</li>
           </ul>
-          <ul class="bullets lang-no" style="display:none;">
+          <ul data-l="nb">
             <li>Har ansvar for åpning, stenging og kontanthåndtering.</li>
             <li>Valgt verneombud. Følger opp HMS-krav og risikovurderinger, og tar opp saker med ledelsen.</li>
           </ul>
-        </div>
+        </article>
 
-        <div class="item">
-          <div class="role">
-            <h4 class="lang-en">S6 Assistant</h4>
-            <h4 class="lang-no" style="display:none;">S6-assistent</h4>
-            <span class="meta lang-en">Norwegian Armed Forces, His Majesty The King&rsquo;s Guard (HMKG) &bull; 01/2021 &ndash; 01/2022</span>
-            <span class="meta lang-no" style="display:none;">Forsvaret, førstegangstjeneste ved Hans Majestet Kongens Garde (HMKG) &bull; 01/2021 &ndash; 01/2022</span>
-          </div>
-          <ul class="bullets lang-en">
+        <article class="entry">
+          <header class="entry-head">
+            <h3><span data-l="en">S6 Assistant</span><span data-l="nb">S6-assistent</span></h3>
+            <span class="when">01/2021&ndash;01/2022</span>
+          </header>
+          <p class="org">
+            <span data-l="en">Norwegian Armed Forces, His Majesty The King&rsquo;s Guard (HMKG)</span>
+            <span data-l="nb">Forsvaret, førstegangstjeneste ved Hans Majestet Kongens Garde (HMKG)</span>
+          </p>
+          <ul data-l="en">
             <li>Handled user administration in the battalion staff, and planned and held courses for other soldiers on handling classified and sensitive information.</li>
             <li>Maintained communications equipment and supported the camp&rsquo;s IT operations.</li>
-            <li>Service evaluation: <em>Excellent</em> on all four assessment points: overall impression, independence, cooperation and communication, and drive.</li>
+            <li>Service evaluation: <em>Excellent</em> on all four points: overall impression, independence, cooperation and communication, and conduct.</li>
           </ul>
-          <ul class="bullets lang-no" style="display:none;">
+          <ul data-l="nb">
             <li>Hadde ansvar for brukeradministrasjon i bataljonsstaben, samt planla og holdt kurs for de andre soldatene i håndtering av gradert og sensitiv informasjon.</li>
             <li>Vedlikeholdt samband og kommunikasjonsutstyr, i tillegg til å støtte IKT-driften i leiren.</li>
             <li>Tjenesteuttalelse med <em>Utmerket</em> på alle fire vurderingspunkter: hovedinntrykk, selvstendighet, samarbeid og kommunikasjon, og fremferd.</li>
           </ul>
-        </div>
+        </article>
       </section>
 
-      <section id="projects">
-        <h3 class="lang-en">Projects</h3>
-        <h3 class="lang-no" style="display:none;">Prosjekter</h3>
-        <p class="hint lang-en">Filter by technology, or click an image to enlarge it.</p>
-        <p class="hint lang-no" style="display:none;">Filtrer på teknologi, eller klikk på et bilde for å forstørre det.</p>
-
-        <div class="filter-bar" role="group" aria-label="Filter projects"></div>
-
-        <div class="project-grid">
-
-          <article class="project">
-            <div class="project-media" data-gallery>
-              <img src="images/projects/ticker-ticker.jpg" width="1400" height="1180" loading="lazy"
-                   alt="Ticker: watchlist and stock detail view with a live price chart">
-              <img src="images/projects/ticker-holdings.jpg" width="1400" height="1180" loading="lazy"
-                   alt="Ticker: Holdings view combining several brokers into one NOK total (invented holdings)">
-              <span class="media-count">1 / 2</span>
-            </div>
-            <div class="project-body">
-              <h4><a href="https://github.com/NicoSik/StockApp">Ticker</a></h4>
-              <span class="meta lang-en">Personal project &bull; 2025 &ndash; Present</span>
-              <span class="meta lang-no" style="display:none;">Personlig prosjekt &bull; 2025 &ndash; Nåværende</span>
-              <p class="lang-en">
-                Stock watcher and multi-broker portfolio aggregator: live watchlists, scrubbable price charts,
-                a paper portfolio and price alerts. Pulls holdings from eToro, Nordnet and DNB into one NOK total.
-              </p>
-              <p class="lang-no" style="display:none;">
-                Aksjeoverv&aring;ker og portef&oslash;ljesamler for flere meglere: live watchlister, interaktive kursgrafer,
-                papirportef&oslash;lje og prisvarsler. Henter beholdning fra eToro, Nordnet og DNB til &eacute;n samlet NOK-sum.
-              </p>
-              <ul class="bullets lang-en">
-                <li>Live prices from the Alpaca API. Every import is stored separately, so earlier data is never overwritten.</li>
-                <li>Wrote my own parsers for two undocumented export formats (CSV and Excel), tested against real export files.</li>
-                <li>Matches securities on the price stated in the export rather than on name, and reconciles every import against the file&rsquo;s total to catch mismatches and partial reads.</li>
-              </ul>
-              <ul class="bullets lang-no" style="display:none;">
-                <li>Live priser fra Alpaca API. Hver import lagres for seg, så tidligere data aldri overskrives.</li>
-                <li>Skrev egne parsere for to udokumenterte eksportformater (CSV og Excel), testet mot ekte eksportfiler.</li>
-                <li>Matcher verdipapirer på prisen eksporten selv oppgir i stedet for på navn, og avstemmer hver import mot filens totalbeløp for å fange opp feilmatch og delvis innlesning.</li>
-              </ul>
-              <ul class="tags">
-                <li>Java</li><li>Javalin</li><li>PostgreSQL</li><li>Alpaca API</li><li>JUnit</li><li>Maven</li><li>JavaScript</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="project">
-            <div class="project-media" data-gallery>
-              <img src="images/projects/os.svg" width="1200" height="750" loading="lazy"
-                   alt="Illustration: virtual pages mapped to physical frames through a page table">
-            </div>
-            <div class="project-body">
-              <h4 class="lang-en">Operating System (IN3000)</h4>
-              <h4 class="lang-no" style="display:none;">Operativsystem (IN3000)</h4>
-              <span class="meta lang-en">University of Oslo &bull; 01/2025 &ndash; 06/2025</span>
-              <span class="meta lang-no" style="display:none;">Universitetet i Oslo &bull; 01/2025 &ndash; 06/2025</span>
-              <p class="lang-en">
-                Built a minimal operating system in x86 assembly and C, with paging and memory management,
-                process scheduling and basic file handling. Gave me a solid grasp of kernel-level architecture
-                and low-level debugging, and I later taught the course as a TA.
-              </p>
-              <p class="lang-no" style="display:none;">
-                Utviklet et minimalt operativsystem i x86-assembly og C, med paging og minneh&aring;ndtering,
-                prosessplanlegging og enkel filh&aring;ndtering. Ga meg god forst&aring;else av kjernearkitektur
-                og feils&oslash;king p&aring; lavt niv&aring;, og jeg var senere gruppel&aelig;rer i emnet.
-              </p>
-              <ul class="tags">
-                <li>C</li><li>x86 Assembly</li><li>Paging</li><li>Scheduling</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="project">
-            <div class="project-media" data-gallery>
-              <img src="images/projects/chalmers.svg" width="1200" height="750" loading="lazy"
-                   alt="Inspector Chalmers logo: DHIS2 app for school inspections">
-            </div>
-            <div class="project-body">
-              <h4><a href="https://github.com/NicoSik/Chalmers">Inspector Chalmers</a></h4>
-              <span class="meta lang-en">Team project &bull; IN5320, University of Oslo &bull; 08/2025 &ndash; 11/2025</span>
-              <span class="meta lang-no" style="display:none;">Teamprosjekt &bull; IN5320, Universitetet i Oslo &bull; 08/2025 &ndash; 11/2025</span>
-              <p class="lang-en">
-                DHIS2 app for digital school inspections in the Gambia. Collects, analyses and visualises
-                inspection data, and works offline: submissions are queued in IndexedDB and synced when the
-                connection returns. I was Scrum master for the group. A course prototype, not running in production.
-              </p>
-              <p class="lang-no" style="display:none;">
-                DHIS2-app for digitale skoleinspeksjoner i Gambia. Samler inn, analyserer og visualiserer
-                inspeksjonsdata, og fungerer offline: innsendinger lagres i IndexedDB og synkroniseres n&aring;r
-                nettet er tilbake. Jeg var Scrum master for gruppen. En prototype fra et emne, ikke i produksjon.
-              </p>
-              <ul class="tags">
-                <li>React</li><li>JavaScript</li><li>DHIS2</li><li>IndexedDB</li><li>Scrum</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="project">
-            <div class="project-media" data-gallery>
-              <img src="images/projects/energy.svg" width="1200" height="750" loading="lazy"
-                   alt="Illustration: household load curve, cost-only versus cost plus peak penalty">
-            </div>
-            <div class="project-body">
-              <h4 class="lang-en"><a href="https://github.com/NicoSik/IN5410">Energy Optimization (IN5410)</a></h4>
-              <h4 class="lang-no" style="display:none;"><a href="https://github.com/NicoSik/IN5410">Energioptimalisering (IN5410)</a></h4>
-              <span class="meta lang-en">Course project &bull; University of Oslo</span>
-              <span class="meta lang-no" style="display:none;">Emneprosjekt &bull; Universitetet i Oslo</span>
-              <p class="lang-en">
-                Schedules shiftable household appliances (dishwasher, laundry, EV charging) under real-time
-                pricing to minimise cost, scaled to a 30-household neighbourhood, and adds a peak-load penalty
-                that spreads demand across the day.
-              </p>
-              <p class="lang-no" style="display:none;">
-                Planlegger flyttbare husholdningsapparater (oppvaskmaskin, vask, elbillading) etter sanntidspris
-                for &aring; minimere kostnad, skalert til et nabolag med 30 husstander, og legger til en straff for
-                toppbelastning som sprer forbruket utover d&oslash;gnet.
-              </p>
-              <ul class="tags">
-                <li>Python</li><li data-tag="SciPy">SciPy (MILP)</li><li>NumPy</li><li>Matplotlib</li>
-              </ul>
-            </div>
-          </article>
-
-        </div>
-      </section>
-
+      <!-- ============ Education ============ -->
       <section id="education">
-        <h3 class="lang-en">Education</h3>
-        <h3 class="lang-no" style="display:none;">Utdanning</h3>
+        <h2><span class="sec-n">03</span><span data-l="en">Education</span><span data-l="nb">Utdanning</span></h2>
 
-        <div class="item">
-          <div class="role">
-            <h4 class="lang-en">Master&rsquo;s in Informatics: Programming and Systems Architecture</h4>
-            <h4 class="lang-no" style="display:none;">Master i informatikk: programmering og systemarkitektur</h4>
-            <span class="meta lang-en">University of Oslo &bull; 08/2025 &ndash; 06/2027</span>
-            <span class="meta lang-no" style="display:none;">Universitetet i Oslo &bull; 08/2025 &ndash; 06/2027</span>
-          </div>
-          <ul class="bullets lang-en">
-            <li>Thesis: <em>Malware detection in deep neural networks</em>. Looks at how to detect malware hidden in the weights of neural networks.</li>
+        <article class="entry">
+          <header class="entry-head">
+            <h3><span data-l="en">MSc in Informatics: Programming and Systems Architecture</span><span data-l="nb">Master i informatikk: programmering og systemarkitektur</span></h3>
+            <span class="when">08/2025&ndash;06/2027</span>
+          </header>
+          <p class="org"><span data-l="en">University of Oslo</span><span data-l="nb">Universitetet i Oslo</span></p>
+          <ul data-l="en">
+            <li>Thesis: <em>Malware detection in deep neural networks</em>. How to detect malware hidden in the weights of neural networks.</li>
             <li>Grade average in master&rsquo;s courses so far: B.</li>
           </ul>
-          <ul class="bullets lang-no" style="display:none;">
+          <ul data-l="nb">
             <li>Masteroppgave: <em>Deteksjon av skadevare i dype nevrale nettverk</em>. Ser på hvordan man kan oppdage skadevare som er gjemt i vektene til nevrale nettverk.</li>
             <li>Karaktersnitt på masteremner så langt: B.</li>
           </ul>
-        </div>
+        </article>
 
-        <div class="item">
-          <div class="role">
-            <h4 class="lang-en">Supplementary Courses in Informatics</h4>
-            <h4 class="lang-no" style="display:none;">Supplerende emner i informatikk</h4>
-            <span class="meta lang-en">University of Oslo &bull; 08/2024 &ndash; 06/2025</span>
-            <span class="meta lang-no" style="display:none;">Universitetet i Oslo &bull; 08/2024 &ndash; 06/2025</span>
-          </div>
-          <ul class="bullets lang-en">
-            <li>Operating Systems (IN3000) and Algorithms: Design and Efficiency (IN3130), taken as preparation before master&rsquo;s admission.</li>
+        <article class="entry">
+          <header class="entry-head">
+            <h3><span data-l="en">Supplementary courses in informatics</span><span data-l="nb">Supplerende emner i informatikk</span></h3>
+            <span class="when">08/2024&ndash;06/2025</span>
+          </header>
+          <p class="org"><span data-l="en">University of Oslo</span><span data-l="nb">Universitetet i Oslo</span></p>
+          <ul data-l="en">
+            <li>Operating Systems (IN3000) and Algorithms: Design and Efficiency (IN3130), taken before master&rsquo;s admission.</li>
           </ul>
-          <ul class="bullets lang-no" style="display:none;">
+          <ul data-l="nb">
             <li>Operativsystemer (IN3000) og Algoritmer: design og effektivitet (IN3130), tatt som påbygning før masteropptak.</li>
           </ul>
-        </div>
+        </article>
 
-        <div class="item">
-          <div class="role">
-            <h4 class="lang-en">Bachelor of Science, specialization in Informatics</h4>
-            <h4 class="lang-no" style="display:none;">Bachelor i realfag, studieretning informatikk</h4>
-            <span class="meta lang-en">University of Oslo &bull; 08/2020 &ndash; 06/2024</span>
-            <span class="meta lang-no" style="display:none;">Universitetet i Oslo &bull; 08/2020 &ndash; 06/2024</span>
-          </div>
-        </div>
+        <article class="entry">
+          <header class="entry-head">
+            <h3><span data-l="en">BSc in Natural Sciences, Informatics</span><span data-l="nb">Bachelor i realfag, studieretning informatikk</span></h3>
+            <span class="when">08/2020&ndash;06/2024</span>
+          </header>
+          <p class="org"><span data-l="en">University of Oslo</span><span data-l="nb">Universitetet i Oslo</span></p>
+        </article>
       </section>
 
+      <!-- ============ Skills ============ -->
       <section id="skills">
-        <h3 class="lang-en">Skills</h3>
-        <h3 class="lang-no" style="display:none;">Ferdigheter</h3>
-        <p class="hint lang-en">Highlighted skills link to the projects that use them.</p>
-        <p class="hint lang-no" style="display:none;">Uthevede ferdigheter viser prosjektene som bruker dem.</p>
+        <h2><span class="sec-n">04</span><span data-l="en">Skills</span><span data-l="nb">Ferdigheter</span></h2>
 
-        <h4 class="lang-en">Programming</h4>
-        <h4 class="lang-no" style="display:none;">Programmering</h4>
-        <ul class="taglist">
-          <li>Java</li><li>Python</li><li>C</li><li>x86 Assembly</li><li>Scheme</li>
-        </ul>
+        <dl class="skills">
+          <dt><span data-l="en">Programming</span><span data-l="nb">Programmering</span></dt>
+          <dd data-filter-source><span class="skill">Java</span>, <span class="skill">Python</span>, <span class="skill">C</span>, <span class="skill">TypeScript</span>, <span class="skill">x86 Assembly</span>, <span class="skill">Scheme</span></dd>
 
-        <h4 class="lang-en">Machine Learning &amp; Data</h4>
-        <h4 class="lang-no" style="display:none;">Maskinlæring og data</h4>
-        <ul class="taglist">
-          <li>PyTorch</li><li>TensorFlow</li><li>scikit-learn</li><li>NumPy</li><li>pandas</li>
-        </ul>
+          <dt><span data-l="en">Machine learning &amp; data</span><span data-l="nb">Maskinlæring og data</span></dt>
+          <dd><span class="skill">PyTorch</span>, <span class="skill">TensorFlow</span>, <span class="skill">scikit-learn</span>, <span class="skill">NumPy</span>, <span class="skill">pandas</span></dd>
 
-        <h4 class="lang-en">Web &amp; Frameworks</h4>
-        <h4 class="lang-no" style="display:none;">Web og rammeverk</h4>
-        <ul class="taglist">
-          <li>HTML</li><li>CSS</li><li>JavaScript</li><li>React</li><li>Javalin</li>
-        </ul>
+          <dt><span data-l="en">Web &amp; frameworks</span><span data-l="nb">Web og rammeverk</span></dt>
+          <dd><span class="skill">HTML</span>, <span class="skill">CSS</span>, <span class="skill">JavaScript</span>, <span class="skill">React</span>, <span class="skill">GraphQL</span>, <span class="skill">Javalin</span>, Shopify Hydrogen</dd>
 
-        <h4 class="lang-en">Databases</h4>
-        <h4 class="lang-no" style="display:none;">Databaser</h4>
-        <ul class="taglist">
-          <li>SQL</li><li>PostgreSQL</li><li>SPARQL</li>
-        </ul>
+          <dt><span data-l="en">Databases</span><span data-l="nb">Database</span></dt>
+          <dd><span class="skill">SQL</span>, <span class="skill">PostgreSQL</span>, <span class="skill">SPARQL</span></dd>
 
-        <h4 class="lang-en">AI Tools</h4>
-        <h4 class="lang-no" style="display:none;">KI-verktøy</h4>
-        <ul class="taglist">
-          <li>Claude</li><li>ChatGPT</li><li class="lang-en">Custom Claude Skills</li><li class="lang-no" style="display:none;">Egne Claude Skills</li><li class="lang-en">LLM API integration</li><li class="lang-no" style="display:none;">API-integrasjon mot LLM</li>
-        </ul>
+          <dt><span data-l="en">AI tools</span><span data-l="nb">KI-verktøy</span></dt>
+          <dd>
+            <span data-l="en">Claude and ChatGPT in daily work, custom Claude Skills and plugins, behaviour evals for agents, and API integration with language models (LLMs)</span>
+            <span data-l="nb">Claude og ChatGPT i daglig arbeid, egne Claude Skills og plugins, behaviour-evals for agenter, og API-integrasjon mot språkmodeller (LLM)</span>
+          </dd>
 
-        <h4 class="lang-en">Tools</h4>
-        <h4 class="lang-no" style="display:none;">Verktøy</h4>
-        <ul class="taglist">
-          <li>Git</li><li>Docker</li><li>Linux</li><li>JUnit</li><li>Maven</li>
-        </ul>
+          <dt><span data-l="en">Tools</span><span data-l="nb">Verktøy</span></dt>
+          <dd><span class="skill">Git</span>, <span class="skill">Docker</span>, <span class="skill">Linux</span>, <span class="skill">Bash</span>, <span class="skill">JUnit</span>, <span class="skill">Maven</span></dd>
 
-        <h4 class="lang-en">Methods</h4>
-        <h4 class="lang-no" style="display:none;">Metodikk</h4>
-        <ul class="taglist">
-          <li>Agile</li><li>Scrum</li><li>Kanban</li>
-        </ul>
-      </section>
-
-      <section id="languages">
-        <h3 class="lang-en">Languages</h3>
-        <h3 class="lang-no" style="display:none;">Språk</h3>
-        <ul class="taglist">
-          <li class="lang-en">Norwegian — Native</li>
-          <li class="lang-en">English — Fluent</li>
-          <li class="lang-en">Polish — Fluent</li>
-          <li class="lang-no" style="display:none;">Norsk — Morsmål</li>
-          <li class="lang-no" style="display:none;">Engelsk — Flytende</li>
-          <li class="lang-no" style="display:none;">Polsk — Flytende</li>
-        </ul>
+          <dt><span data-l="en">Methods</span><span data-l="nb">Metodikk</span></dt>
+          <dd><span class="skill">Agile</span>, <span class="skill">Scrum</span>, <span class="skill">Kanban</span></dd>
+        </dl>
+        <p class="note">
+          <span data-l="en">Underlined skills show the projects that use them.</span>
+          <span data-l="nb">Understrekede ferdigheter viser prosjektene som bruker dem.</span>
+        </p>
       </section>
     </main>
+
+    <footer class="colophon">
+      <span>Nicolai Sikora</span>
+      <span data-l="en">Last updated October 2026</span>
+      <span data-l="nb">Sist oppdatert oktober 2026</span>
+    </footer>
   </div>
 
-  <dialog id="lightbox" class="lightbox" aria-label="Image viewer">
-    <button class="lb-close" aria-label="Close">&times;</button>
-    <button class="lb-nav lb-prev" aria-label="Previous image">&lsaquo;</button>
+  <dialog id="viewer" class="viewer" aria-label="Image viewer">
     <figure>
       <img alt="">
-      <figcaption></figcaption>
+      <figcaption>
+        <span class="viewer-caption"></span>
+        <span class="viewer-pos"></span>
+      </figcaption>
     </figure>
-    <button class="lb-nav lb-next" aria-label="Next image">&rsaquo;</button>
+    <div class="viewer-controls">
+      <button data-step="-1" aria-label="Previous image">&larr;</button>
+      <button data-step="1" aria-label="Next image">&rarr;</button>
+      <button data-close aria-label="Close">esc</button>
+    </div>
   </dialog>
 
   <script>
-    let currentLang = 'en';
+    const root = document.documentElement;
+    const store = {
+      get: k => { try { return localStorage.getItem(k); } catch (e) { return null; } },
+      set: (k, v) => { try { localStorage.setItem(k, v); } catch (e) {} }
+    };
 
-    function toggleLanguage() {
-      const enElements = document.querySelectorAll('.lang-en');
-      const noElements = document.querySelectorAll('.lang-no');
-      const langBtn = document.getElementById('langBtn');
-
-      if (currentLang === 'en') {
-        // Switch to Norwegian
-        enElements.forEach(el => el.style.display = 'none');
-        noElements.forEach(el => el.style.display = '');
-        langBtn.textContent = '🇬🇧 English';
-        document.documentElement.lang = 'no';
-        currentLang = 'no';
-        try { localStorage.setItem('cvLang', 'no'); } catch (e) {}
-      } else {
-        // Switch to English
-        enElements.forEach(el => el.style.display = '');
-        noElements.forEach(el => el.style.display = 'none');
-        langBtn.textContent = '🇳🇴 Norsk';
-        document.documentElement.lang = 'en';
-        currentLang = 'en';
-        try { localStorage.setItem('cvLang', 'en'); } catch (e) {}
-      }
+    // ---- Language ----
+    function setLang(lang) {
+      root.lang = lang;
+      document.querySelectorAll('[data-set-lang]').forEach(b =>
+        b.setAttribute('aria-pressed', String(b.dataset.setLang === lang)));
+      store.set('cvLang', lang === 'nb' ? 'no' : 'en');
     }
+    document.querySelectorAll('[data-set-lang]').forEach(b =>
+      b.addEventListener('click', () => setLang(b.dataset.setLang)));
+    setLang(root.lang === 'nb' ? 'nb' : 'en');
 
-    // Project image galleries + lightbox
-    const lightbox = document.getElementById('lightbox');
-    const lbImg = lightbox.querySelector('img');
-    const lbCaption = lightbox.querySelector('figcaption');
-    let lbImages = [];
-    let lbIndex = 0;
-
-    function showLightboxImage(i) {
-      lbIndex = (i + lbImages.length) % lbImages.length;
-      const img = lbImages[lbIndex];
-      lbImg.src = img.currentSrc || img.src;
-      lbImg.alt = img.alt;
-      lbCaption.textContent = img.alt;
-      lightbox.classList.toggle('single', lbImages.length < 2);
-    }
-
-    document.querySelectorAll('[data-gallery]').forEach(media => {
-      const images = Array.from(media.querySelectorAll('img'));
-      const counter = media.querySelector('.media-count');
-      let current = 0;
-
-      images.forEach((img, i) => {
-        img.tabIndex = 0;
-        img.setAttribute('role', 'button');
-        img.classList.toggle('active', i === 0);
-        const open = () => {
-          lbImages = images;
-          showLightboxImage(i);
-          lightbox.showModal();
-        };
-        img.addEventListener('click', open);
-        img.addEventListener('keydown', e => {
-          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
-        });
-      });
-
-      // Cycle the card preview when it holds more than one image
-      if (images.length > 1) {
-        const prev = document.createElement('button');
-        const next = document.createElement('button');
-        prev.className = 'media-nav media-prev';
-        next.className = 'media-nav media-next';
-        prev.setAttribute('aria-label', 'Previous image');
-        next.setAttribute('aria-label', 'Next image');
-        prev.innerHTML = '&lsaquo;';
-        next.innerHTML = '&rsaquo;';
-        const go = step => {
-          images[current].classList.remove('active');
-          current = (current + step + images.length) % images.length;
-          images[current].classList.add('active');
-          if (counter) counter.textContent = (current + 1) + ' / ' + images.length;
-        };
-        prev.addEventListener('click', () => go(-1));
-        next.addEventListener('click', () => go(1));
-        media.append(prev, next);
-      }
+    // ---- Theme ----
+    document.getElementById('themeBtn').addEventListener('click', () => {
+      const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+      root.dataset.theme = next;
+      store.set('cvTheme', next);
     });
 
-    lightbox.querySelector('.lb-close').addEventListener('click', () => lightbox.close());
-    lightbox.querySelector('.lb-prev').addEventListener('click', () => showLightboxImage(lbIndex - 1));
-    lightbox.querySelector('.lb-next').addEventListener('click', () => showLightboxImage(lbIndex + 1));
-    lightbox.addEventListener('click', e => { if (e.target === lightbox) lightbox.close(); });
-    lightbox.addEventListener('keydown', e => {
-      if (lbImages.length < 2) return;
-      if (e.key === 'ArrowLeft') showLightboxImage(lbIndex - 1);
-      if (e.key === 'ArrowRight') showLightboxImage(lbIndex + 1);
-    });
-
-    // ---- Theme (light/dark), remembered per browser ----
-    const themeBtn = document.getElementById('themeBtn');
-    function applyTheme(theme) {
-      document.documentElement.dataset.theme = theme;
-      themeBtn.textContent = theme === 'dark' ? '☀️' : '🌙';
-    }
-    applyTheme(document.documentElement.dataset.theme || 'light');
-    themeBtn.addEventListener('click', () => {
-      const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
-      applyTheme(next);
-      try { localStorage.setItem('cvTheme', next); } catch (e) {}
-    });
-
-    // ---- Copy email ----
-    document.querySelectorAll('.copy-btn').forEach(btn => {
-      btn.addEventListener('click', async () => {
-        try {
-          await navigator.clipboard.writeText(btn.dataset.copy);
-          btn.textContent = '✓';
-          btn.classList.add('copied');
-        } catch (e) {
-          btn.textContent = '✗';
-        }
-        setTimeout(() => { btn.textContent = '⧉'; btn.classList.remove('copied'); }, 1500);
-      });
-    });
-
-    // ---- Project filtering by technology ----
+    // ---- Project filter ----
     const projects = Array.from(document.querySelectorAll('.project'));
-    const filterBar = document.querySelector('.filter-bar');
-    const tagKey = li => li.dataset.tag || li.textContent.trim();
-    const projectTags = new Map();
-    projects.forEach(p => {
-      const keys = Array.from(p.querySelectorAll('.tags li')).map(tagKey);
-      p.dataset.tags = keys.join('|');
-      keys.forEach(k => projectTags.set(k, (projectTags.get(k) || 0) + 1));
-    });
+    const filterEl = document.querySelector('.filter');
+    const emptyNote = document.querySelector('.filter-empty');
+    const used = new Set(projects.flatMap(p => p.dataset.tags.split('|')));
+    const skillEls = Array.from(document.querySelectorAll('.skill'));
+    // The filter row offers the programming languages; any other skill used by a
+    // project can still be picked from the Skills list and shows up here while active
+    const keys = Array.from(document.querySelectorAll('[data-filter-source] .skill'))
+      .map(s => s.textContent.trim()).filter(k => used.has(k));
+    let active = null;
 
-    // Only offer filters for technologies listed under Skills (or shared by several projects)
-    const skillNames = new Set(Array.from(document.querySelectorAll('#skills .taglist li'))
-      .map(li => li.textContent.trim()));
-    const filterKeys = [...projectTags.keys()].filter(k => skillNames.has(k) || projectTags.get(k) > 1);
-
-    let activeFilter = null;
-    function makeChip(label, key) {
-      const chip = document.createElement('button');
-      chip.className = 'chip';
-      chip.dataset.filter = key || '';
-      chip.innerHTML = label;
-      chip.addEventListener('click', () => setFilter(key === activeFilter ? null : key));
-      filterBar.appendChild(chip);
+    function addFilterButton(key, label, temporary) {
+      const b = document.createElement('button');
+      b.dataset.key = key || '';
+      if (temporary) b.dataset.temporary = '';
+      if (label) b.innerHTML = label; else b.textContent = key;
+      b.addEventListener('click', () => setFilter(key === active ? null : key));
+      filterEl.appendChild(b);
     }
-    makeChip('<span class="lang-en">All</span><span class="lang-no" style="display:none;">Alle</span>', null);
-    // Most-used technologies first, then alphabetical
-    filterKeys
-      .sort((a, b) => projectTags.get(b) - projectTags.get(a) || a.localeCompare(b))
-      .forEach(key => {
-        const n = projectTags.get(key);
-        makeChip(n > 1 ? `${key} <small>${n}</small>` : key, key);
-      });
-    if (currentLang === 'no') {
-      filterBar.querySelectorAll('.lang-en').forEach(el => el.style.display = 'none');
-      filterBar.querySelectorAll('.lang-no').forEach(el => el.style.display = '');
-    }
+    addFilterButton(null, '<span data-l="en">all</span><span data-l="nb">alle</span>');
+    keys.forEach(k => addFilterButton(k));
 
     function setFilter(key) {
-      activeFilter = key;
-      filterBar.querySelectorAll('.chip').forEach(c =>
-        c.classList.toggle('active', (c.dataset.filter || null) === key));
+      active = key;
+      filterEl.querySelectorAll('[data-temporary]').forEach(b => b.remove());
+      if (key && !keys.includes(key)) addFilterButton(key, null, true);
+      filterEl.querySelectorAll('button').forEach(b =>
+        b.setAttribute('aria-pressed', String((b.dataset.key || null) === key)));
+      let shown = 0;
       projects.forEach(p => {
         const match = !key || p.dataset.tags.split('|').includes(key);
-        p.classList.toggle('filtered-out', !match);
-        p.querySelectorAll('.tags li').forEach(li =>
-          li.classList.toggle('active', key !== null && tagKey(li) === key));
+        p.hidden = !match;
+        if (match) shown++;
       });
+      emptyNote.hidden = shown > 0;
     }
     setFilter(null);
 
-    // Tags inside a card act as filters too
-    projects.forEach(p => p.querySelectorAll('.tags li').forEach(li => {
-      if (!filterKeys.includes(tagKey(li))) return;
-      li.classList.add('filterable');
-      li.tabIndex = 0;
-      li.setAttribute('role', 'button');
-      const go = () => setFilter(tagKey(li) === activeFilter ? null : tagKey(li));
-      li.addEventListener('click', go);
-      li.addEventListener('keydown', e => {
-        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); }
-      });
-    }));
-
-    // Skills that appear in a project jump to the filtered project list
-    document.querySelectorAll('#skills .taglist li').forEach(li => {
-      const key = li.textContent.trim();
-      if (!filterKeys.includes(key)) return;
-      li.classList.add('linked');
-      li.tabIndex = 0;
-      li.setAttribute('role', 'link');
-      li.title = 'Show projects using ' + key;
-      const go = () => {
+    // Skills used in a project become links to the filtered project list
+    skillEls.forEach(s => {
+      const key = s.textContent.trim();
+      if (!used.has(key)) return;
+      const b = document.createElement('button');
+      b.className = 'skill linked';
+      b.textContent = key;
+      b.addEventListener('click', () => {
         setFilter(key);
         document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
-      };
-      li.addEventListener('click', go);
-      li.addEventListener('keydown', e => {
-        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); }
       });
+      s.replaceWith(b);
     });
 
-    // ---- Highlight the current section in the top bar ----
-    const navLinks = Array.from(document.querySelectorAll('.nav-links a'));
-    const sectionObserver = new IntersectionObserver(entries => {
+    // ---- Image viewer ----
+    const viewer = document.getElementById('viewer');
+    const vImg = viewer.querySelector('img');
+    const vCaption = viewer.querySelector('.viewer-caption');
+    const vPos = viewer.querySelector('.viewer-pos');
+    const allImages = Array.from(document.querySelectorAll('.figure img'));
+    let vIndex = 0;
+
+    function show(i) {
+      vIndex = (i + allImages.length) % allImages.length;
+      const img = allImages[vIndex];
+      vImg.src = img.currentSrc || img.src;
+      vImg.alt = img.alt;
+      vCaption.textContent = img.alt;
+      vPos.textContent = (vIndex + 1) + ' / ' + allImages.length;
+    }
+    allImages.forEach((img, i) => {
+      img.tabIndex = 0;
+      img.setAttribute('role', 'button');
+      const open = () => { show(i); viewer.showModal(); };
+      img.addEventListener('click', open);
+      img.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
+      });
+    });
+    viewer.querySelectorAll('[data-step]').forEach(b =>
+      b.addEventListener('click', () => show(vIndex + Number(b.dataset.step))));
+    viewer.querySelector('[data-close]').addEventListener('click', () => viewer.close());
+    viewer.addEventListener('click', e => { if (e.target === viewer) viewer.close(); });
+    viewer.addEventListener('keydown', e => {
+      if (e.key === 'ArrowLeft') show(vIndex - 1);
+      if (e.key === 'ArrowRight') show(vIndex + 1);
+    });
+
+    // ---- Mark the section being read in the contents list ----
+    const tocLinks = Array.from(document.querySelectorAll('.toc a'));
+    const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (!entry.isIntersecting) return;
-        navLinks.forEach(a =>
-          a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id));
+        tocLinks.forEach(a => a.toggleAttribute('aria-current',
+          a.getAttribute('href') === '#' + entry.target.id));
       });
-    }, { rootMargin: '-45% 0px -50% 0px' });
-    document.querySelectorAll('main section[id]').forEach(sec => sectionObserver.observe(sec));
-
-    // ---- Fade content in as it scrolls into view ----
-    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      const revealObserver = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            revealObserver.unobserve(entry.target);
-          }
-        });
-      }, { rootMargin: '0px 0px -40px 0px' });
-      document.querySelectorAll('.item, .project').forEach(el => {
-        el.classList.add('reveal');
-        revealObserver.observe(el);
-      });
-    }
-
-    // Load saved language preference
-    window.addEventListener('DOMContentLoaded', () => {
-      let savedLang = null;
-      try { savedLang = localStorage.getItem('cvLang'); } catch (e) {}
-      if (savedLang === 'no') {
-        toggleLanguage();
-      }
-    });
+    }, { rootMargin: '-30% 0px -60% 0px' });
+    document.querySelectorAll('#about, main section[id]').forEach(s => observer.observe(s));
   </script>
 </body>
 </html>
